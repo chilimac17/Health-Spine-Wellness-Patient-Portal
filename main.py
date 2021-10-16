@@ -89,7 +89,6 @@ def register():
             mysql.connection.commit()
             msg = 'You have successfully registered!'
 
-
     elif request.method == 'POST':
         # Form is empty... (no POST data)
         msg = 'Please fill out the form!'
@@ -110,6 +109,27 @@ def profile():
     # Show profile page
     return render_template('profile.html', username=username, password=password, email=email)
 
+
+@app.route('/patientinfoupdate', methods=['GET', 'POST'])
+def patient_info_update():
+    # Output message if something goes wrong...
+    msg = ''
+    if request.method == 'POST' and 'firstname' in request.form and 'lastname' in request.form and 'dob' in request.form and 'tel' in request.form:
+            msg = 'You have successfully updated your information!'
+
+    elif request.method == 'POST':
+        # Form is empty... (no POST data)
+        msg = 'Please fill out the form!'
+    # Show registration form with message (if any)
+    return render_template('patientinfoupdate.html', msg=msg)
+
+@app.route('/patientappointments')
+def patient_appointments():
+    return render_template('patientappointments.html')
+
+@app.route('/patientinfo')
+def patient_info():
+    return render_template('patientinfo.html')
 
 if __name__ == '__main__':
     app.run()
