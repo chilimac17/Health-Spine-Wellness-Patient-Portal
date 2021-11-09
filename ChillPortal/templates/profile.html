@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Profile</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	</head>
+	<div class="navtop">
+		<div class="h1">
+			<h1>Profile</h1>
+			<div class="a">
+				<a href="{{ url_for('patient_info') }}">My Information</a>
+				<a href="{{ url_for('patient_appointments') }}">My Appointments</a>
+				<a href="{{ url_for('patient_info_update') }}">Update Patient Information</a>
+				<a href="{{ url_for('logout') }}">Logout</a>
+			</div>
+		</div>
+	</div>
+	<body class="loggedin">
+		<div class="content">
+			<div class="p">
+				<p>Your account details are below:</p>
+				<p><b>Username:</b>     {{ username }}</p>
+				<p><b>Password:</b>     {{ password }}</p>
+				<p><b>Email:</b>		{{ email }}</p>
+			</div>
+		</div>
+	</body>
+</html>
