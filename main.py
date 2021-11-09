@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
+import config
 
 app = Flask(__name__)
 
@@ -9,10 +10,10 @@ app = Flask(__name__)
 app.secret_key = 'your secret key'
 
 # Enter your database connection details below
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'root'
-app.config['MYSQL_DB'] = 'test'
+app.config['MYSQL_HOST'] = config.mySQLHost
+app.config['MYSQL_USER'] = config.mySQLUser
+app.config['MYSQL_PASSWORD'] = config.mySQLpass
+app.config['MYSQL_DB'] = config.mySQLdatabase
 
 # Intialize MySQL
 mysql = MySQL(app)
@@ -40,8 +41,9 @@ def login():
             session['id'] = account['id']
             session['usrname'] = account['usrname']
             # Redirect to home page
-            # return 'Logged in successfully!'
             return redirect(url_for('profile'))
+
+
         else:
             # Account doesnt exist or username/password incorrect
             msg = 'Incorrect username/password!'
@@ -89,6 +91,7 @@ def register():
             mysql.connection.commit()
             msg = 'You have successfully registered!'
 
+
     elif request.method == 'POST':
         # Form is empty... (no POST data)
         msg = 'Please fill out the form!'
@@ -96,40 +99,22 @@ def register():
     return render_template('register.html', msg=msg)
 
 
+
+
+
+# http://localhost:5000/pythinlogin/profile - this will be the profile page, only accessible for loggedin users
 @app.route('/profile')
 def profile():
-    # Fetch account details
-    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM MyGuests WHERE usrname = %s AND id = %s', (session['usrname'], session['id'],))
-    account = cursor.fetchone()
-    # Create variables
-    username = account['usrname']
-    password = account['password']
-    email = account['email']
-    # Show profile page
-    return render_template('profile.html', username=username, password=password, email=email)
 
+    if 'loggedin' in session:
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM MyGuests WHERE id = %s', (session['id'],))
+        # Fetch one record and return result
+        account = cursor.fetchone()
+        return render_template('profile.html', usrname=account['usrname'], password=account['password'], email=account['email'])
+    # User is not loggedin redirect to login page
+    return redirect(url_for('login'))
 
-@app.route('/patientinfoupdate', methods=['GET', 'POST'])
-def patient_info_update():
-    # Output message if something goes wrong...
-    msg = ''
-    if request.method == 'POST' and 'firstname' in request.form and 'lastname' in request.form and 'dob' in request.form and 'tel' in request.form:
-            msg = 'You have successfully updated your information!'
-
-    elif request.method == 'POST':
-        # Form is empty... (no POST data)
-        msg = 'Please fill out the form!'
-    # Show registration form with message (if any)
-    return render_template('patientinfoupdate.html', msg=msg)
-
-@app.route('/patientappointments')
-def patient_appointments():
-    return render_template('patientappointments.html')
-
-@app.route('/patientinfo')
-def patient_info():
-    return render_template('patientinfo.html')
 
 if __name__ == '__main__':
     app.run()
