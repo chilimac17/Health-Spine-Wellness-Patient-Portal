@@ -4,11 +4,12 @@ import MySQLdb.cursors
 import re
 import config
 
-#to run go into cdm
-#run these commands
+# To start go into CDM
+# run these commands
 # set FLASK_APP=main.py
 # set FLASK_DEBUG=1
 # python -m flask run
+
 
 app = Flask(__name__)
 
