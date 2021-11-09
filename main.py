@@ -4,6 +4,12 @@ import MySQLdb.cursors
 import re
 import config
 
+#to run go into cdm
+#run these commands
+# set FLASK_APP=main.py
+# set FLASK_DEBUG=1
+# python -m flask run
+
 app = Flask(__name__)
 
 # Change this to your secret key (can be anything, it's for extra protection)
@@ -48,7 +54,8 @@ def login():
             # Account doesnt exist or username/password incorrect
             msg = 'Incorrect username/password!'
     # Show the login form with message (if any)
-    return render_template('index.html', msg=msg)
+    # add index.html (old file)
+    return render_template('logInPage.html', msg=msg)
 
 @app.route('/logout')
 def logout():
