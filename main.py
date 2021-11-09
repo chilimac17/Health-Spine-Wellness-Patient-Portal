@@ -55,7 +55,7 @@ def login():
             msg = 'Incorrect username/password!'
     # Show the login form with message (if any)
     # add index.html (old file)
-    return render_template('logInPage.html', msg=msg)
+    return render_template('index.html', msg=msg)
 
 @app.route('/logout')
 def logout():

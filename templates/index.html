@@ -11,11 +11,19 @@
 
 	<body>
 		<div class="login">
-			<h1>Login</h1>
+			<!--- <h1>Login</h1> --->
+			<h1>class="titlemako-normal-white-40px">
+      			<span class="mako-normal-white-40px">Patient portal</span>
+			</h1>
 			<div class="links">
 				<a href="{{ url_for('login') }}" class="active">Login</a>
 				<a href="{{ url_for('register') }}">Register</a>
 			</div>
+			<!--- TEST --->
+			 <div class="text-1lusitana-normal-white-40px">
+      			<span class="lusitana-normal-white-40px">Health &amp; Spine Wellness Center</span>
+    			</div>
+			<!--- TEST --->
 			<form action="{{ url_for('login') }}" method="post">
 				<label for="username">
 					<i class="fas fa-user"></i>
@@ -28,6 +36,11 @@
 				<div class="msg">{{ msg }}</div>
 				<input type="submit" value="Login">
 			</form>
+			<!--- TEST --->
+			<p class="text-1montserrat-light-jordy-blue-15px">
+  				<span class="montserrat-light-jordy-blue-15px">Register for a new account</span>
+			</p>
+			<!--- TEST --->
 		</div>
 	</body>
 </html>

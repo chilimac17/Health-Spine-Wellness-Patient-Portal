@@ -10,6 +10,38 @@ body {
   	background-color: #435165;
   	margin: 0;
 }
+/*    TEST */
+.login, .text-1 {
+  left: 0;
+  letter-spacing: 0;
+  line-height: 40px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 728px;
+}
+.login, .title {
+  left: 0;
+  letter-spacing: 0;
+  line-height: 40px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 330px;
+}
+.text-1 {
+  left: 0;
+  letter-spacing: 0;
+  line-height: 40px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  white-space: nowrap;
+  width: 379px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,300,600|Mako:400|Lusitana:400");
+/*  TEST */
 .login, .register {
   	width: 400px;
   	background-color: #ffffff;
