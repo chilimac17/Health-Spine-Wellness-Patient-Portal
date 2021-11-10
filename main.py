@@ -38,15 +38,14 @@ def login():
         password = request.form['password']
         # Check if account exists using MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM MyGuests WHERE usrname = %s AND password = %s', (username, password,))
+        cursor.execute('SELECT * FROM Users WHERE username = %s AND password = %s', (username, password,))
         # Fetch one record and return result
         account = cursor.fetchone()
         # If account exists in accounts table in out database
         if account:
             # Create session data, we can access this data in other routes
             session['loggedin'] = True
-            session['id'] = account['id']
-            session['usrname'] = account['usrname']
+            session['username'] = account['username']
             # Redirect to home page
             return redirect(url_for('profile'))
 
@@ -56,13 +55,12 @@ def login():
             msg = 'Incorrect username/password!'
     # Show the login form with message (if any)
     # add index.html (old file)
-    return render_template('logInPage.html', msg=msg)
+    return render_template('index.html', msg=msg)
 
 @app.route('/logout')
 def logout():
     # Remove session data, this will log the user out
    session.pop('loggedin', None)
-   session.pop('id', None)
    session.pop('username', None)
    # Redirect to login page
    return redirect(url_for('login'))
@@ -82,7 +80,7 @@ def register():
 
         # Check if account exists using MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM MyGuests WHERE usrname = %s', (username,))
+        cursor.execute('SELECT * FROM Users WHERE username = %s', (username,))
         account = cursor.fetchone()
         # If account exists show error and validation checks
         if account:
@@ -95,7 +93,7 @@ def register():
             msg = 'Please fill out the form!'
         else:
             # Account doesnt exists and the form data is valid, now insert new account into accounts table
-            cursor.execute('INSERT INTO MyGuests (usrname, password, email) VALUES ( %s, %s, %s)', (username, password, email,))
+            cursor.execute('INSERT INTO Users (username, password, email) VALUES ( %s, %s, %s)', (username, password, email,))
             mysql.connection.commit()
             msg = 'You have successfully registered!'
 
@@ -116,13 +114,28 @@ def profile():
 
     if 'loggedin' in session:
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM MyGuests WHERE id = %s', (session['id'],))
+        cursor.execute('SELECT * FROM Users WHERE username = %s', (session['username'],))
         # Fetch one record and return result
         account = cursor.fetchone()
-        return render_template('profile.html', usrname=account['usrname'], password=account['password'], email=account['email'])
+        return render_template('profile.html', username=account['username'], password=account['password'], email=account['email'])
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
 
+@app.route('/patientinfo')
+def patient_info():
+    return render_template('patientinfo.html')
+
+@app.route('/patientappointments')
+def patient_appointments():
+    return render_template('patientappointments.html')
+
+@app.route('/patientinfoupdate')
+def patient_info_update():
+    return render_template('patientinfoupdate.html')
+
+@app.route('/calendar')
+def calendar():
+    return render_template('calender.html')
 
 if __name__ == '__main__':
     app.run()
