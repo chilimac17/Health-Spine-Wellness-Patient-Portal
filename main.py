@@ -137,5 +137,9 @@ def patient_info_update():
 def calendar():
     return render_template('calender.html')
 
+@app.route('/homepage')
+def homepage():
+    return render_template('homepage.html')
+
 if __name__ == '__main__':
     app.run()
