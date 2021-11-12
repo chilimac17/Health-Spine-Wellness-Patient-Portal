@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+     <<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">Sign Up</div>
+        <form action="#">
+            <div class="user-details">
+                <div class ="input-box">
+                    <span class="details">Email</span>
+                    <input type="text" placeholder="Enter Email" required>
+                <div class ="input-box">
+                    <span class="details">User Name</span>
+                    <input type="text" placeholder="Create User Name" required>
+                <div class ="input-box">
+                    <span class="details">Phone Number</span>
+                    <input type="text" placeholder="Contract Number" required>
+                <div class ="input-box">
+                    <span class="details">Password</span>
+                    <input type="text" placeholder="Enter Password" required>
+                <div class ="input-box">
+                    <span class="details">Confirm Password</span>
+                    <input type="text" placeholder="Confirm Password" required>
+                <div class="button">
+                    <input type ="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>
