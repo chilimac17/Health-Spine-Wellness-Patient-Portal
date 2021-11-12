@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <!--  This source code is exported from pxCode, you can get more document from https://www.pxcode.io  -->
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/login_css/common.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/login_css/fonts.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/login_css/Login.css') }}" />
+  </head>
+
+  <body>
+    <form class="login login-group layout" action="{{ url_for('figma') }}" method="post">
+      <div class="login-flex layout2">
+        <div
+          style="--src:url({{ url_for('static', filename='assets/34fc23973cc3eb66ae5e96ffb566f358.png') }})"
+          class="login-img layout"
+        ></div>
+        <h1 class="login-patient-portal layout">PATIENT PORTAL</h1>
+        <div class="login-cover-group layout">
+          <div class="login-background layout"></div>
+          <div class="login-foreground layout">
+            <div class="login-foreground-col">
+              <div class="login-flex layout">
+                <div
+                  style="--src:url({{ url_for('static', filename='/assets/6416c11776e4d7ec5102fcea62499b38.png') }})"
+                  class="login-icon layout"
+                ></div>
+                <div
+                  style="--src:url({{ url_for('static', filename='/assets/fcc408bfe3835f1633e46cf5e98daca2.png') }})"
+                  class="login-img layout1"
+                ></div>
+              </div>
+            </div>
+            <div class="login-foreground-spacer"></div>
+            <div class="login-foreground-col1">
+              <div class="login-email layout"><input type="text" name="username" placeholder="Username" id="username" required></div>
+            </div>
+          </div>
+        </div>
+        <div class="login-cover-group layout1">
+          <div class="login-background layout"></div>
+          <div class="login-foreground layout1">
+            <div class="login-foreground1-col">
+              <div class="login-flex layout1">
+                <div
+                  style="--src:url({{ url_for('static', filename='/assets/96a4b5ca5832b2e5dc26f2b864a1c67d.png') }})"
+                  class="login-img layout2"
+                ></div>
+                <div
+                  style="--src:url({{ url_for('static', filename='assets/419341a5f02105560cda0ce3458c4fc8.png') }})"
+                  class="login-img layout3"
+                ></div>
+              </div>
+            </div>
+            <div class="login-foreground1-spacer"></div>
+            <div class="login-foreground1-col1"><input class="login-password layout" type="password" name="password" placeholder="Password" id="password" required>
+            </div>
+          </div>
+        </div>
+        <div class="login-cover-group2 layout">
+          <h5 class="login-login layout">login</h5>
+        </div>
+        <div class="login-flex3 layout">
+          <div class="login-flex3-col"><h5 class="login-or layout">Or</h5></div>
+          <div class="login-flex3-spacer"></div>
+          <div class="login-flex3-col1">
+            <h5 class="login-highlights layout">Register for a new account</h5>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

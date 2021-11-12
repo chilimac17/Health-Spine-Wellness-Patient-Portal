@@ -1,0 +1,297 @@
+.login-group {
+  display: flex;
+  background-color: rgb(83, 105, 174);
+}
+.login-group.layout {
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+  margin: 0px;
+}
+.login-flex {
+  display: flex;
+  flex-direction: column;
+}
+.login-flex.layout2 {
+  position: relative;
+  overflow: visible;
+  width: 424px;
+  min-width: 424px;
+  margin: 0px auto;
+  @include xs {
+    width: 318px;
+    min-width: 318px;
+    margin: 0px auto;
+  }
+}
+.login-img {
+  background: var(--src) center center / contain no-repeat;
+}
+.login-img.layout {
+  position: relative;
+  height: 141px;
+  margin: 0px 24px 0px 0px;
+  @include xs {
+    height: 141px;
+    margin: 0px 12px 0px 0px;
+  }
+}
+.login-patient-portal {
+  display: flex;
+  justify-content: center;
+  font: 40px/1 "Mako", Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  letter-spacing: 0px;
+  @include lg {
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 39px;
+    text-align: center;
+  }
+  @include md {
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 36px;
+    text-align: center;
+  }
+  @include sm {
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 32px;
+    text-align: center;
+  }
+}
+.login-patient-portal.layout {
+  position: relative;
+  margin: 89px 100.5px 0px 76.5px;
+  @include xs {
+    margin: 45px 50px 0px 38px;
+  }
+}
+.login-cover-group {
+  display: flex;
+}
+.login-cover-group.layout {
+  position: relative;
+  overflow: visible;
+  min-height: 45px;
+  margin: 41px 74px 0px 50px;
+  @include xs {
+    min-height: 45px;
+    margin: 25px 37px 0px 25px;
+  }
+}
+.login-background {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 4px 4px 4px 4px;
+}
+.login-background.layout {
+  position: absolute;
+  top: 0px;
+  height: 45px;
+  left: 0px;
+  flex-grow: 1;
+  right: 0px;
+  margin: 0px;
+}
+.login-foreground {
+  display: flex;
+}
+.login-foreground.layout {
+  position: relative;
+  overflow: visible;
+  flex-grow: 1;
+  margin: 10px 15.33px 14.5px;
+}
+.login-foreground-col {
+  display: flex;
+  flex: 0 1 13.33px;
+}
+.login-flex.layout {
+  position: relative;
+  overflow: visible;
+  flex-grow: 1;
+  margin: 5.5px 0px 0px;
+}
+.login-icon {
+  background: var(--src) center center / contain no-repeat;
+}
+.login-icon.layout {
+  position: relative;
+  height: 6.67px;
+  width: 6.67px;
+  min-width: 6.67px;
+  margin: 0px 3.33px;
+}
+.login-img.layout1 {
+  position: relative;
+  height: 5px;
+  width: 13.33px;
+  min-width: 13.33px;
+  margin: 3.33px 0px 0px;
+}
+.login-foreground-spacer {
+  display: flex;
+  flex: 0 1 22.83px;
+}
+.login-foreground-col1 {
+  display: flex;
+  flex: 0 1 44px;
+}
+.login-email input {
+  display: flex;
+  justify-content: center;
+  font: 300 14px/1.4285714285714286 "Montserrat", Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  letter-spacing: 0px;
+}
+.login-email.layout input {
+  position: relative;
+  flex-grow: 1;
+  margin: 0px 0px 0.5px;
+}
+.login-cover-group.layout1{
+  position: relative;
+  overflow: visible;
+  min-height: 45px;
+  margin: 20px 74px 0px 50px;
+  @include xs {
+    min-height: 45px;
+    margin: 25px 37px 0px 25px;
+  }
+}
+.login-foreground.layout1 {
+  position: relative;
+  overflow: visible;
+  flex-grow: 1;
+  margin: 13px 14.5px 12px;
+}
+.login-foreground1-col {
+  display: flex;
+  flex: 0 1 15px;
+}
+.login-flex.layout1 {
+  position: relative;
+  overflow: visible;
+  flex-grow: 1;
+  margin: 1.67px 0px;
+}
+.login-img.layout2 {
+  position: relative;
+  height: 7.5px;
+  width: 8.33px;
+  min-width: 8.33px;
+  margin: 0px 3.33px;
+}
+.login-img.layout3 {
+  position: relative;
+  height: 9.17px;
+  width: 15px;
+  min-width: 15px;
+  margin: 0px;
+}
+.login-foreground1-spacer {
+  display: flex;
+  flex: 0 1 28.5px;
+}
+.login-foreground1-col1 {
+  display: flex;
+  flex: 0 1 71px;
+}
+.login-password input {
+  display: flex;
+  justify-content: center;
+  font: 300 14px/1.4285714285714286 "Montserrat", Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  letter-spacing: 0px;
+}
+.login-password.layout input {
+  position: relative;
+  flex-grow: 1;
+  margin: 0px;
+}
+
+::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+.login-cover-group2 {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px 4px 4px 4px;
+}
+.login-cover-group2.layout {
+  position: relative;
+  overflow: visible;
+  min-height: 45px;
+  margin: 43px 74px 0px 50px;
+  @include xs {
+    min-height: 45px;
+    margin: 25px 37px 0px 25px;
+  }
+}
+.login-login {
+  display: flex;
+  justify-content: center;
+  font: 600 16px/1.25 "Montserrat", Helvetica, Arial, serif;
+  color: rgb(34, 73, 193);
+  text-align: center;
+  letter-spacing: 0px;
+}
+.login-login.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 13px 0px 12px;
+}
+.login-flex3 {
+  display: flex;
+}
+.login-flex3.layout {
+  position: relative;
+  overflow: visible;
+  margin: 25px 63.5px 147px;
+  @include xs {
+    margin: 25px 32px 74px;
+  }
+}
+.login-flex3-col {
+  display: flex;
+  flex: 0 1 23px;
+}
+.login-or {
+  display: flex;
+  justify-content: center;
+  font: 15px/2.6666666666666665 "Montserrat", Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  letter-spacing: 0px;
+}
+.login-or.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 0px;
+}
+.login-flex3-spacer {
+  display: flex;
+  flex: 0 1 35.5px;
+}
+.login-flex3-col1 {
+  display: flex;
+  flex: 0 1 205px;
+}
+.login-highlights {
+  display: flex;
+  justify-content: center;
+  font: italic 300 15px/2.6666666666666665 "Montserrat", Helvetica, Arial, serif;
+  color: rgb(156, 184, 255);
+  text-align: center;
+  letter-spacing: 0px;
+}
+.login-highlights.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 0px;
+}
