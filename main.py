@@ -27,7 +27,7 @@ mysql = MySQL(app)
 
 # http://localhost:5000/pythonlogin/ - this will be the login page, we need to use both GET and POST requests
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     # Output message if something goes wrong...
     msg = ''
@@ -47,15 +47,14 @@ def login():
             session['loggedin'] = True
             session['username'] = account['username']
             # Redirect to home page
-            return redirect(url_for('profile'))
+            return redirect(url_for('patient_appointments'))
 
 
         else:
             # Account doesnt exist or username/password incorrect
             msg = 'Incorrect username/password!'
     # Show the login form with message (if any)
-    # add index.html (old file)
-    return render_template('index.html', msg=msg)
+    return render_template('login.html', msg=msg)
 
 @app.route('/logout')
 def logout():
@@ -149,10 +148,6 @@ def aboutUs():
 @app.route('/ContactUs')
 def contactUs():
     return render_template('Contact_us.html')
-
-@app.route('/figma', methods=['GET', 'POST'])
-def figma():
-    return render_template('Login.html')
 
 if __name__ == '__main__':
     app.run()
