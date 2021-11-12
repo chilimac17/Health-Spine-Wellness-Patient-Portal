@@ -150,5 +150,9 @@ def aboutUs():
 def contactUs():
     return render_template('Contact_us.html')
 
+@app.route('/figma', methods=['GET', 'POST'])
+def figma():
+    return render_template('Login.html')
+
 if __name__ == '__main__':
     app.run()
