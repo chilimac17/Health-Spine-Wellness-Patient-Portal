@@ -151,7 +151,7 @@ def contactUs():
 
 @app.route('/services')
 def services():
-    return render_template('Servs.html')
+    return render_template('Service.html')
 
 if __name__ == '__main__':
     app.run()
