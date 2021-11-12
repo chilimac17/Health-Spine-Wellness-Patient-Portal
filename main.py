@@ -121,17 +121,18 @@ def profile():
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
 
+#possible dup
 @app.route('/patientinfo')
 def patient_info():
-    return render_template('patientinfo.html')
+    return render_template('My_info.html')
 
 @app.route('/patientappointments')
 def patient_appointments():
-    return render_template('patientappointments.html')
+    return render_template('MyAppointments.html')
 
 @app.route('/patientinfoupdate')
 def patient_info_update():
-    return render_template('patientinfoupdate.html')
+    return render_template('My_info.html')
 
 @app.route('/calendar')
 def calendar():
@@ -140,6 +141,10 @@ def calendar():
 @app.route('/homepage')
 def homepage():
     return render_template('Homepage.html')
+
+@app.route('/AboutUs')
+def aboutUs():
+    return render_template('AboutPage.html')
 
 if __name__ == '__main__':
     app.run()
