@@ -139,7 +139,7 @@ def calendar():
 
 @app.route('/homepage')
 def homepage():
-    return render_template('homepage.html')
+    return render_template('Homepage.html')
 
 if __name__ == '__main__':
     app.run()
