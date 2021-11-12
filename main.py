@@ -116,7 +116,7 @@ def profile():
         cursor.execute('SELECT * FROM Users WHERE username = %s', (session['username'],))
         # Fetch one record and return result
         account = cursor.fetchone()
-        return render_template('profile.html', username=account['username'], password=account['password'], email=account['email'])
+        return render_template('Profile.html', username=account['username'], password=account['password'], email=account['email'])
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
 
@@ -131,13 +131,13 @@ def patient_appointments():
 
 @app.route('/patientinfoupdate')
 def patient_info_update():
-    return render_template('My_info.html')
+    return render_template('Profile.html')
 
 @app.route('/calendar')
 def calendar():
     return render_template('calender.html')
 
-@app.route('/homepage')
+@app.route('/')
 def homepage():
     return render_template('Homepage.html')
 
@@ -148,6 +148,10 @@ def aboutUs():
 @app.route('/ContactUs')
 def contactUs():
     return render_template('Contact_us.html')
+
+@app.route('/services')
+def services():
+    return render_template('Servs.html')
 
 if __name__ == '__main__':
     app.run()

@@ -33,28 +33,28 @@
           </div>
           <div class="homepage-content-box1-spacer"></div>
           <div class="homepage-content-box1-col1">
-            <h2 class="homepage-home layout"><button onclick="window.location.href='homepage'">Home</button></h2>
+            <h2 class="homepage-home layout"><a class="homepage-home layout" href="{{ url_for('homepage') }}">Home</a></h2>
           </div>
           <div class="homepage-content-box1-spacer1"></div>
           <div class="homepage-content-box1-col2">
-            <h2 class="homepage-about-us layout"><a class="homepage-about-us layout" href="AboutUs">About Us</a></h2>
+            <h2 class="homepage-about-us layout"><a class="homepage-about-us layout" href="{{ url_for('aboutUs') }}">About Us</a></h2>
           </div>
           <div class="homepage-content-box1-spacer2"></div>
           <div class="homepage-content-box1-col3">
-            <h2 class="homepage-services layout"><button onclick="window.location.href='homepage'">Services</button></h2>
+            <h2 class="homepage-services layout"><a class="homepage-services layout" href="{{ url_for('services') }}">Services</a></h2>
           </div>
           <div class="homepage-content-box1-spacer3"></div>
           <div class="homepage-content-box1-col4">
-            <h2 class="homepage-contact-us layout"><button onclick="window.location.href='ContactUs'">Contact Us</button></h2>
+            <h2 class="homepage-contact-us layout"><a class="homepage-contact-us layout" href="{{ url_for('contactUs') }}">Contact Us</a></h2>
           </div>
           <div class="homepage-content-box1-spacer4"></div>
           <div class="homepage-content-box1-col5">
-            <h2 class="homepage-log-in layout">Log In</h2>
+            <h2 class="homepage-log-in layout"><a class="homepage-log-in layout" href="{{ url_for('login') }}">Log In</a></h2>
           </div>
           <div class="homepage-content-box1-spacer5"></div>
           <div class="homepage-content-box1-col6">
             <div class="homepage-cover-group layout">
-              <h2 class="homepage-register layout">Register</h2>
+              <h2 class="homepage-register layout"><a class="homepage-register layout" href="{{ url_for('register') }}">Register</a></h2>
             </div>
           </div>
         </div>
