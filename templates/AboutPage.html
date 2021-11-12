@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <!--  This source code is exported from pxCode, you can get more document from https://www.pxcode.io  -->
+
   <head>
     <meta charset="utf-8" />
     <meta
@@ -19,14 +19,15 @@
     <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="/css/AboutPage.css" />
   </head>
-
+<!--- "--src:url({{ url_for('static', filename='assets/ADD PROPER PIC NAME')}})"--->
+  <!--- "--src:url({{ url_for('static', filename='assets/219699db006418aa7dd4bc6946145a09.png')}})"--->
   <body>
     <div class="about-page about-page-content-box layout">
       <div class="about-page-content-box-row">
         <div class="about-page-content-box1 layout">
           <div class="about-page-content-box1-col">
             <div
-              style="--src:url(/assets/219699db006418aa7dd4bc6946145a09.png)"
+              style="--src:url({{ url_for('static', filename='assets/219699db006418aa7dd4bc6946145a09.png')}})"
               class="about-page-img layout"
             ></div>
           </div>
@@ -56,7 +57,7 @@
         <div class="about-page-flex layout">
           <div class="about-page-flex-col">
             <div
-              style="--src:url(/assets/f7980375d360a2464d507b3a5a8a35bc.png)"
+              style= "--src:url({{ url_for('static', filename='assets/f7980375d360a2464d507b3a5a8a35bc.png')}})"
               class="about-page-img layout1"
             ></div>
           </div>
@@ -84,7 +85,7 @@
           <div class="about-page-flex-spacer1"></div>
           <div class="about-page-flex-col">
             <div
-              style="--src:url(/assets/e7965c2f24badb2107ee5153e4ff90c8.png)"
+              style="--src:url({{ url_for('static', filename='assets/e7965c2f24badb2107ee5153e4ff90c8.png')}})"
               class="about-page-img layout2"
             ></div>
           </div>
@@ -113,7 +114,7 @@
         <div class="about-page-flex layout1">
           <div class="about-page-flex3-col">
             <div
-              style="--src:url(/assets/0160692cb0809201ecbf221446b50225.png)"
+              style="--src:url({{ url_for('static', filename='assets/0160692cb0809201ecbf221446b50225.png')}})"
               class="about-page-img layout3"
             ></div>
           </div>
@@ -134,7 +135,8 @@ Dr. Christopher Kahanec is a New Jersey native. Dr. Kahanec received his BS in e
           <div class="about-page-flex3-spacer1"></div>
           <div class="about-page-flex3-col2">
             <div
-              style="--src:url(/assets/986504e32b67702a031958f23feb473a.png)"
+
+              style="--src:url({{ url_for('static', filename='assets/986504e32b67702a031958f23feb473a.png')}})"
               class="about-page-img layout4"
             ></div>
           </div>

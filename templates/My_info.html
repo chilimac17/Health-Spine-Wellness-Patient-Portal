@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <!--  This source code is exported from pxCode, you can get more document from https://www.pxcode.io  -->
+
   <head>
     <meta charset="utf-8" />
     <meta
@@ -26,7 +26,7 @@
         <div class="my-info-content-box1 layout">
           <div class="my-info-content-box1-col">
             <div
-              style="--src:url(/assets/219699db006418aa7dd4bc6946145a09.png)"
+              style="--src:url({{ url_for('static', filename='assets/219699db006418aa7dd4bc6946145a09.png')}})"
               class="my-info-img layout"
             ></div>
           </div>
@@ -80,7 +80,7 @@
           <div class="my-info-flex-spacer"></div>
           <div class="my-info-flex-col1">
             <div
-              style="--src:url(/assets/92f70972387aab49752c65476be29d0f.png)"
+              style="--src:url({{ url_for('static', filename='assets/92f70972387aab49752c65476be29d0f.png')}})"
               class="my-info-img layout1"
             ></div>
           </div>
@@ -144,7 +144,8 @@
       </div>
       <div class="my-info-content-box-row6">
         <div
-          style="--src:url(/assets/cfd6a7997f1664001b7a45822e01a64d.png)"
+
+          style="--src:url({{ url_for('static', filename='assets/cfd6a7997f1664001b7a45822e01a64d.png')}})"
           class="my-info-cover-group layout"
         >
           <h1 class="my-info-submit layout">Submit</h1>
