@@ -15,18 +15,18 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="/css/common.css" />
-    <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="/css/Homepage.css" />
+    <link rel="stylesheet" type="text/css" href="static/homepage_css/common.css" />
+    <link rel="stylesheet" type="text/css" href="static/homepage_css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="static/homepage_css/Homepage.css" />
   </head>
-
+    <!--- "--src:url({{ url_for('static', filename='assets/ADD PROPER PIC NAME')}})"--->
   <body>
     <div class="homepage homepage-content-box layout">
       <div class="homepage-content-box-row">
         <div class="homepage-content-box1 layout">
           <div class="homepage-content-box1-col">
             <div
-              style="--src:url(/assets/219699db006418aa7dd4bc6946145a09.png)"
+              style="--src:url({{ url_for('static', filename='assets/219699db006418aa7dd4bc6946145a09.png')}})"
               class="homepage-img layout"
             ></div>
           </div>
@@ -69,14 +69,14 @@
           <div class="homepage-flex-spacer"></div>
           <div class="homepage-flex-col1">
             <div
-              style="--src:url(/assets/f5adfc4e935e4697e36ca10271a0b60b.png)"
+              style="--src:url({{ url_for('static', filename='assets/f5adfc4e935e4697e36ca10271a0b60b.png')}})"
               class="homepage-img layout1"
             ></div>
           </div>
           <div class="homepage-flex-spacer1"></div>
           <div class="homepage-flex-col2">
             <div
-              style="--src:url(/assets/4dfe8fd542b89e8253457fcb9bb9a408.png)"
+              style="--src:url({{ url_for('static', filename='assets/4dfe8fd542b89e8253457fcb9bb9a408.png')}})"
               class="homepage-img2 layout"
             ></div>
           </div>
