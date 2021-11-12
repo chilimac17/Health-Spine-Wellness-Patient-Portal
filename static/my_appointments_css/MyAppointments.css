@@ -1,0 +1,331 @@
+/* This source code is exported from pxCode, you can get more document from https://www.pxcode.io */
+.my-appointments-content-box {
+  display: flex;
+  flex-direction: column;
+  background-color: white; }
+
+.my-appointments-content-box.layout {
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+  margin: 0px; }
+
+.my-appointments-content-box-row {
+  display: flex;
+  flex: 0 1 200px; }
+
+.my-appointments-content-box1 {
+  display: flex;
+  background-color: whitesmoke; }
+
+.my-appointments-content-box1.layout {
+  position: relative;
+  overflow: visible;
+  min-height: 200px;
+  flex-grow: 1;
+  margin: 0px; }
+
+.my-appointments-content-box1-col {
+  display: flex;
+  flex: 0 1 427px; }
+
+.my-appointments-img {
+  background: var(--src) center center/contain no-repeat; }
+
+.my-appointments-img.layout {
+  position: relative;
+  height: 156px;
+  flex-grow: 1;
+  margin: 22px 0px; }
+  @media (max-width: 575.98px) {
+    .my-appointments-img.layout {
+      height: 156px;
+      flex-grow: 1;
+      margin: 25px 0px; } }
+
+.my-appointments-content-box1-spacer {
+  display: flex;
+  flex: 0 1 618.5px; }
+
+.my-appointments-content-box1-col1 {
+  display: flex;
+  flex: 0 1 65px; }
+
+.my-appointments-home {
+  display: flex;
+  justify-content: center;
+  font: 26.76px/1.2 "Abel", Helvetica, Arial, serif;
+  color: black;
+  text-align: center;
+  letter-spacing: 0px; }
+  @media (max-width: 767.98px) {
+    .my-appointments-home {
+      align-items: flex-start;
+      justify-content: center;
+      font-size: 23px;
+      text-align: center; } }
+
+.my-appointments-home.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 83px 0px 85px; }
+
+.my-appointments-content-box1-spacer1 {
+  display: flex;
+  flex: 0 1 43px; }
+
+.my-appointments-content-box1-col2 {
+  display: flex;
+  flex: 0 1 158px; }
+
+.my-appointments-my-information {
+  display: flex;
+  justify-content: center;
+  font: 26.75614px/1.2 "Abel", Helvetica, Arial, serif;
+  color: black;
+  text-align: center;
+  letter-spacing: 0px; }
+  @media (max-width: 767.98px) {
+    .my-appointments-my-information {
+      align-items: flex-start;
+      justify-content: center;
+      font-size: 23px;
+      text-align: center; } }
+
+.my-appointments-my-information.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 83px 0px 85px; }
+
+.my-appointments-content-box1-spacer2 {
+  display: flex;
+  flex: 0 1 43.5px; }
+
+.my-appointments-content-box1-col3 {
+  display: flex;
+  flex: 0 1 182px; }
+
+.my-appointments-my-appointments {
+  display: flex;
+  justify-content: center;
+  font: 26.75614px/1.2 "Abel", Helvetica, Arial, serif;
+  color: black;
+  text-align: center;
+  letter-spacing: 0px; }
+  @media (max-width: 767.98px) {
+    .my-appointments-my-appointments {
+      align-items: flex-start;
+      justify-content: center;
+      font-size: 23px;
+      text-align: center; } }
+
+.my-appointments-my-appointments.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 83px 0px 85px; }
+
+.my-appointments-content-box1-spacer3 {
+  display: flex;
+  flex: 0 1 44px; }
+
+.my-appointments-content-box1-col4 {
+  display: flex;
+  flex: 0 1 72px; }
+
+.my-appointments-profile {
+  display: flex;
+  justify-content: center;
+  font: 26.75614px/1.2 "Abel", Helvetica, Arial, serif;
+  color: black;
+  text-align: center;
+  letter-spacing: 0px; }
+  @media (max-width: 767.98px) {
+    .my-appointments-profile {
+      align-items: flex-start;
+      justify-content: center;
+      font-size: 23px;
+      text-align: center; } }
+
+.my-appointments-profile.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 83px 0px 85px; }
+
+.my-appointments-content-box1-spacer4 {
+  display: flex;
+  flex: 0 1 43.5px; }
+
+.my-appointments-content-box1-col5 {
+  display: flex;
+  flex: 0 1 223.5px; }
+
+.my-appointments-log-out {
+  display: flex;
+  justify-content: center;
+  font: 26.76px/1.2 "Abel", Helvetica, Arial, serif;
+  color: black;
+  text-align: center;
+  letter-spacing: 0px; }
+  @media (max-width: 767.98px) {
+    .my-appointments-log-out {
+      align-items: flex-start;
+      justify-content: center;
+      font-size: 23px;
+      text-align: center; } }
+
+.my-appointments-log-out.layout {
+  position: relative;
+  width: 85px;
+  min-width: 85px;
+  margin: 83px 0px 85px; }
+
+.my-appointments-content-box-row1 {
+  display: flex;
+  flex: 0 1 880px; }
+
+.my-appointments-flex {
+  display: flex; }
+
+.my-appointments-flex.layout {
+  position: relative;
+  overflow: visible;
+  flex-grow: 1;
+  margin: 14px 55px 39.78px; }
+  @media (max-width: 1919.98px) {
+    .my-appointments-flex.layout {
+      flex-grow: 1;
+      margin: 25px 28px; } }
+  @media (max-width: 1399.98px) {
+    .my-appointments-flex.layout {
+      flex-grow: 1;
+      margin: 25px 14px; } }
+  @media (max-width: 1199.98px) {
+    .my-appointments-flex.layout {
+      flex-grow: 1;
+      margin: 25px 10px; } }
+
+.my-appointments-flex-col {
+  display: flex;
+  flex: 0 1 1074px; }
+
+.my-appointments-img.layout1 {
+  position: relative;
+  height: 826.22px;
+  flex-grow: 1;
+  margin: 0px; }
+
+.my-appointments-flex-spacer {
+  display: flex;
+  flex: 0 1 179px; }
+
+.my-appointments-flex-col1 {
+  display: flex;
+  flex: 0 1 333px; }
+
+.my-appointments-flex1 {
+  display: flex;
+  flex-direction: column; }
+
+.my-appointments-flex1.layout {
+  position: relative;
+  overflow: visible;
+  flex-grow: 1;
+  margin: 88px 0px 263.22px; }
+
+.my-appointments-cover-group {
+  display: flex;
+  background-color: #3aff15;
+  border-radius: 25px 25px 25px 25px; }
+
+.my-appointments-cover-group.layout {
+  position: relative;
+  overflow: visible;
+  min-height: 90px;
+  margin: 0px; }
+
+.my-appointments-create-appointment {
+  display: flex;
+  justify-content: center;
+  font: 30px/1.2 "Abel", Helvetica, Arial, serif;
+  color: black;
+  text-align: center;
+  letter-spacing: 0px; }
+  @media (max-width: 991.98px) {
+    .my-appointments-create-appointment {
+      align-items: flex-start;
+      justify-content: center;
+      font-size: 29px;
+      text-align: center; } }
+  @media (max-width: 767.98px) {
+    .my-appointments-create-appointment {
+      align-items: flex-start;
+      justify-content: center;
+      font-size: 25px;
+      text-align: center; } }
+
+.my-appointments-create-appointment.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 26px 0px 28px; }
+
+.my-appointments-cover-group.layout1 {
+  position: relative;
+  overflow: visible;
+  min-height: 90px;
+  margin: 103px 0px 0px; }
+
+.my-appointments-modify-appointment {
+  display: flex;
+  justify-content: center;
+  font: 30px/1.2 "Abel", Helvetica, Arial, serif;
+  color: black;
+  text-align: center;
+  letter-spacing: 0px; }
+  @media (max-width: 991.98px) {
+    .my-appointments-modify-appointment {
+      align-items: flex-start;
+      justify-content: center;
+      font-size: 29px;
+      text-align: center; } }
+  @media (max-width: 767.98px) {
+    .my-appointments-modify-appointment {
+      align-items: flex-start;
+      justify-content: center;
+      font-size: 25px;
+      text-align: center; } }
+
+.my-appointments-modify-appointment.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 26px 0px 28px; }
+
+.my-appointments-cover-group.layout2 {
+  position: relative;
+  overflow: visible;
+  min-height: 90px;
+  margin: 102px 0px 0px; }
+
+.my-appointments-delete-appointment {
+  display: flex;
+  justify-content: center;
+  font: 30px/1.2 "Abel", Helvetica, Arial, serif;
+  color: black;
+  text-align: center;
+  letter-spacing: 0px; }
+  @media (max-width: 991.98px) {
+    .my-appointments-delete-appointment {
+      align-items: flex-start;
+      justify-content: center;
+      font-size: 29px;
+      text-align: center; } }
+  @media (max-width: 767.98px) {
+    .my-appointments-delete-appointment {
+      align-items: flex-start;
+      justify-content: center;
+      font-size: 25px;
+      text-align: center; } }
+
+.my-appointments-delete-appointment.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: 26px 49.5px 28px 50.5px; }
