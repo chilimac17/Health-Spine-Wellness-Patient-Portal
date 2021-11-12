@@ -146,5 +146,9 @@ def homepage():
 def aboutUs():
     return render_template('AboutPage.html')
 
+@app.route('/ContactUs')
+def contactUs():
+    return render_template('Contact_us.html')
+
 if __name__ == '__main__':
     app.run()
