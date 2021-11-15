@@ -95,15 +95,11 @@
       <div class="schedule1-content-box-row4">
         <div class="schedule1-flex layout1">
           <div class="schedule1-flex1-col">
-             <input class="schedule1-rect layout" type="text" name="First name" placeholder="first name" id="firstName" required>
-            <div class="schedule1-rect layout">
-            </div>
+             <input class="schedule1-rect layout schedule1-first-name layout" type="text" name="first_name" placeholder="First Name" id="first_name" required>
           </div>
           <div class="schedule1-flex1-spacer"></div>
           <div class="schedule1-flex1-col">
-            <input class="schedule1-rect layout" type="text" name="Last name" placeholder="last name" id="lastName" required>
-            <div class="schedule1-rect layout">
-            </div>
+            <input class="schedule1-rect layout schedule1-last-name layout" type="text" name="last_name" placeholder="Last Name" id="last_name" required>
           </div>
         </div>
       </div>
@@ -121,15 +117,11 @@
       <div class="schedule1-content-box-row6">
         <div class="schedule1-flex layout3">
           <div class="schedule1-flex3-col">
-            <input class="schedule1-rect layout" type="text" name="email" placeholder="email" id="email" required>
-            <div class="schedule1-rect layout">
-            </div>
+            <input class="schedule1-rect layout schedule1-email layout" type="email" name="email" placeholder="Email" id="email" required>
           </div>
           <div class="schedule1-flex3-spacer"></div>
           <div class="schedule1-flex3-col">
-            <input class="schedule1-rect layout" type="text" name="mobilePhone" placeholder="Phone Number" id="mobliePhone" required>
-            <div class="schedule1-rect layout">
-            </div>
+            <input class="schedule1-rect layout schedule1-mobile-phone layout" type="tel" name="phone" placeholder="123-456-7890" id="phone" required>
           </div>
         </div>
       </div>
@@ -138,12 +130,11 @@
       </div>
       <div class="schedule1-content-box-row8">
         <div class="schedule1-rect4 layout">
-          <input class="schedule1-rect4 layout" type="text" name="addInfo" placeholder="Additional Info" id="addInfo" required>
+          <input class="schedule1-rect4 layout" type="text" name="add_info" placeholder="Additional Info" id="add_info" required>
         </div>
       </div>
       <div class="schedule1-content-box-row9">
         <div class="schedule1-cover-group layout">
-          <!--- fix to make it a button -->
           <h1 class="schedule1-continue layout"><a class="schedule1-continue layout" href="{{ url_for('schedule2') }}">Continue</a></h1>
         </div>
       </div>
