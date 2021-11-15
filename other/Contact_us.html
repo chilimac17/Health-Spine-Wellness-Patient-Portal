@@ -15,9 +15,9 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="static/contact_us_css/common.css" />
-    <link rel="stylesheet" type="text/css" href="static/contact_us_css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="static/contact_us_css/Contact_us.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/contact_us_css/common.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/contact_us_css/fonts.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/contact_us_css/Contact_us.css') }}" />
   </head>
 
   <body>
@@ -66,7 +66,7 @@
             <h1 class="contact-us-contact-us1 layout">Contact Us</h1>
             <div class="contact-us-group2 layout">
               <h2 class="contact-us-first-name layout">First Name</h2>
-              <div class="contact-us-rect layout"></div>
+              <input class="contact-us-rect layout contact-us-first-name layout" type="text" name="first_name" placeholder="First Name" id="first_name" required>
             </div>
             <h2 class="contact-us-medium-title layout">
               Add a Note (optional)
@@ -75,23 +75,22 @@
               <div class="contact-us-flex2-col">
                 <div class="contact-us-flex3 layout">
                   <h2 class="contact-us-last-name layout">Last Name</h2>
-                  <div class="contact-us-rect layout1"></div>
+                  <input class="contact-us-rect layout1 contact-us-last-name layout" type="text" name="last_name" placeholder="Last Name" id="last_name" required>
                   <h2 class="contact-us-email layout">Email</h2>
-                  <div class="contact-us-rect layout2"></div>
+                  <input class="contact-us-rect layout2 contact-us-email layout" type="email" name="email" placeholder="Email" id="email" required>
                 </div>
               </div>
               <div class="contact-us-flex2-spacer"></div>
               <div class="contact-us-flex2-col1">
-                <div class="contact-us-rect3 layout"></div>
+                <input class="contact-us-rect3 layout" type="text" name="add_info" placeholder="Additional Info" id="add_info" required>
               </div>
             </div>
             <div class="contact-us-flex layout1">
               <div class="contact-us-flex4-col">
                 <div class="contact-us-flex5 layout">
                   <h2 class="contact-us-phone-number layout">Phone Number</h2>
-                  <div class="contact-us-rect layout3"></div>
+                  <input class="contact-us-rect layout3" type="tel" name="phone" placeholder="123-456-7890" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
                   <input class="contact-us-submit contact-us-cover-group layout" type="submit" value="Submit">
-                </div>
               </div>
               <div class="contact-us-flex4-spacer"></div>
               <div class="contact-us-flex4-col1">

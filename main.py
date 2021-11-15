@@ -147,7 +147,7 @@ def aboutUs():
 
 @app.route('/ContactUs')
 def contactUs():
-    return render_template('Contact_us.html')
+    return render_template('ContactUs.html')
 
 @app.route('/services')
 def services():

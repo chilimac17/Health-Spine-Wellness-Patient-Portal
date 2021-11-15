@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <!--  This source code is exported from pxCode, you can get more document from https://www.pxcode.io  -->
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/contact_us_css/common.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/contact_us_css/fonts.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/contact_us_css/ContactUs.css') }}" />
+  </head>
+
+  <body>
+    <form class="contact-us contact-us-content-box layout" action="{{ url_for('contactUs') }}" method="post">
+      <div class="contact-us-content-box-row">
+        <div class="contact-us-content-box1 layout">
+          <div class="contact-us-content-box1-col">
+            <div
+              style="--src:url({{ url_for('static', filename='assets/238136c62fae635cbc3526402ed742db.png') }})"
+              class="contact-us-img layout"
+            ></div>
+          </div>
+          <div class="contact-us-content-box1-spacer"></div>
+          <div class="contact-us-content-box1-col1">
+            <h2 class="contact-us-home layout">Home</h2>
+          </div>
+          <div class="contact-us-content-box1-spacer1"></div>
+          <div class="contact-us-content-box1-col2">
+            <h2 class="contact-us-about-us layout">About Us</h2>
+          </div>
+          <div class="contact-us-content-box1-spacer2"></div>
+          <div class="contact-us-content-box1-col3">
+            <h2 class="contact-us-services layout">Services</h2>
+          </div>
+          <div class="contact-us-content-box1-spacer3"></div>
+          <div class="contact-us-content-box1-col4">
+            <h2 class="contact-us-contact-us layout">Contact Us</h2>
+          </div>
+          <div class="contact-us-content-box1-spacer4"></div>
+          <div class="contact-us-content-box1-col5">
+            <h2 class="contact-us-log-in layout">Log In</h2>
+          </div>
+        </div>
+      </div>
+      <div class="contact-us-content-box-row1">
+        <div class="contact-us-flex layout2">
+          <div class="contact-us-flex-col">
+            <div
+              style="--src:url({{ url_for('static', filename='/assets/e0e139068a0d831e4a588ff5245d7953.png') }})"
+              class="contact-us-img layout1"
+            ></div>
+          </div>
+          <div class="contact-us-flex-spacer"></div>
+          <div class="contact-us-flex-col1">
+            <div class="contact-us-flex1 layout">
+              <h1 class="contact-us-contact-us1 layout">Contact Us</h1>
+              <h2 class="contact-us-first-name layout">First Name</h2>
+              <div class="contact-us-flex layout">
+                <div class="contact-us-flex2-col">
+                  <div class="contact-us-flex3 layout">
+                    <input class="contact-us-rect layout1 contact-us-first-name" type="text" name="first_name" placeholder="First Name" id="first_name" required>
+                    <h2 class="contact-us-last-name layout">Last Name</h2>
+                    <input class="contact-us-rect layout1 contact-us-last-name" type="text" name="last_name" placeholder="Last Name" id="last_name" required>
+                    <h2 class="contact-us-email layout">Email</h2>
+                    <input class="contact-us-rect layout1 contact-us-email" type="email" name="email" placeholder="Email" id="email" required>
+                  </div>
+                </div>
+                <div class="contact-us-flex2-spacer"></div>
+                <div class="contact-us-flex2-col1">
+                  <div class="contact-us-flex4 layout">
+                    <h2 class="contact-us-medium-title layout">
+                      Add a Note (optional)
+                    </h2>
+                    <input class="contact-us-rect3 layout" type="text" name="add_info" name="add_info" placeholder="Additional Info" id="add_info" required>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-us-flex layout1">
+                <div class="contact-us-flex5-col">
+                  <div class="contact-us-flex6 layout">
+                    <h2 class="contact-us-phone-number layout">Phone Number</h2>
+                    <input class="contact-us-rect layout3 contact-us-phone-number layout" type="tel" name="phone" placeholder="123-456-7890" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                    <div class="contact-us-cover-group layout">
+                      <input class="contact-us-cover-group layout contact-us-submit layout" type="submit" value="Submit">
+                    </div>
+                  </div>
+                </div>
+                <div class="contact-us-flex5-spacer"></div>
+                <div class="contact-us-flex5-col1">
+                  <div
+                    style="--src:url({{ url_for('static', filename='/assets/a3d851446a99f463b870fe0ec32ee284.png') }})"
+                    class="contact-us-img layout2"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
