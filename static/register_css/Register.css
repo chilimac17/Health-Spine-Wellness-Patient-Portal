@@ -1,0 +1,310 @@
+/* This source code is exported from pxCode, you can get more document from https://www.pxcode.io */
+.register-group {
+  display: flex;
+  background-color: #5369ae; }
+
+.register-group.layout {
+  position: relative;
+  overflow: hidden;
+  min-height: 720px;
+  flex-grow: 1;
+  margin: 0px; }
+
+.register-flex {
+  display: flex;
+  flex-direction: column; }
+
+.register-flex.layout2 {
+  position: relative;
+  overflow: visible;
+  flex-grow: 1;
+  margin: 55.01px 157px; }
+
+.register-flex-spacer {
+  display: flex;
+  flex: 0 0 auto;
+  min-height: 93.99px; }
+
+.register-sign-up {
+  font: 700 30px/1.2 "Cabin", Helvetica, Arial, serif;
+  color: white;
+  letter-spacing: 0px; }
+
+.register-sign-up.layout {
+  position: relative;
+  width: 161px;
+  min-width: 161px;
+  display: block;
+  margin: 0px auto; }
+
+.register-flex-spacer1 {
+  display: flex;
+  flex: 0 0 auto;
+  min-height: 17px; }
+
+.register-flex1 {
+  display: flex; }
+
+.register-flex1.layout {
+  position: relative;
+  overflow: visible;
+  margin: 0px 17.33px; }
+
+.register-flex1-col {
+  display: flex;
+  flex: 0 1 13.33px; }
+
+.register-flex.layout {
+  position: relative;
+  overflow: visible;
+  flex-grow: 1;
+  margin: 2.5px 0px 0.5px; }
+
+.register-icon {
+  background: var(--src) center center/contain no-repeat; }
+
+.register-icon.layout {
+  position: relative;
+  height: 6.67px;
+  width: 6.67px;
+  min-width: 6.67px;
+  margin: 0px 3.33px; }
+
+.register-img {
+  background: var(--src) center center/contain no-repeat; }
+
+.register-img.layout {
+  position: relative;
+  height: 5px;
+  width: 13.33px;
+  min-width: 13.33px;
+  margin: 3.33px 0px 0px; }
+
+.register-flex1-spacer {
+  display: flex;
+  flex: 0 1 10.33px; }
+
+.register-email {
+  font: 15px/1.2 "Poppins", Helvetica, Arial, serif;
+  color: #cecece;
+  letter-spacing: 0px; }
+
+.register-email.layout {
+  position: relative;
+  margin: 0px; }
+
+.register-flex1-spacer1 {
+  display: flex;
+  flex: 0 1 451.92px; }
+
+.register-username {
+  font: 15px/1.2 "Poppins", Helvetica, Arial, serif;
+  color: #cecece;
+  letter-spacing: 0px; }
+
+.register-username.layout {
+  position: relative;
+  margin: 0px; }
+
+.register-flex-spacer2 {
+  display: flex;
+  flex: 0 0 auto;
+  min-height: 11px; }
+
+.register-flex3 {
+  display: flex; }
+
+.register-flex3.layout {
+  position: relative;
+  overflow: visible;
+  margin: 0px; }
+
+.register-flex3-col {
+  display: flex;
+  flex: 0 1 398px; }
+
+.register-rect {
+  background-color: #f0f0ff;
+  border-radius: 8px 8px 8px 8px; }
+
+.register-rect.layout {
+  position: relative;
+  height: 45.17px;
+  flex-grow: 1;
+  margin: 0px; }
+
+.register-flex3-spacer {
+  display: flex;
+  flex: 0 1 127px; }
+
+.register-flex-spacer3 {
+  display: flex;
+  flex: 0 0 auto;
+  min-height: 61.83px; }
+
+.register-flex4 {
+  display: flex; }
+
+.register-flex4.layout {
+  position: relative;
+  overflow: visible;
+  margin: 0px 14.46px; }
+
+.register-patient-name {
+  font: 15px/1.2 "Poppins", Helvetica, Arial, serif;
+  color: #cecece;
+  letter-spacing: 0px; }
+
+.register-patient-name.layout {
+  position: relative;
+  margin: 1px 0px 0px; }
+
+.register-flex4-spacer {
+  display: flex;
+  flex: 0 1 417.46px; }
+
+.register-contact-number {
+  font: 15px/1.2 "Poppins", Helvetica, Arial, serif;
+  color: #cecece;
+  letter-spacing: 0px; }
+
+.register-contact-number.layout {
+  position: relative;
+  margin: 0px 0px 1px; }
+
+.register-flex-spacer4 {
+  display: flex;
+  flex: 0 0 auto;
+  min-height: 11px; }
+
+.register-flex5 {
+  display: flex; }
+
+.register-flex5.layout {
+  position: relative;
+  overflow: visible;
+  margin: 0px; }
+
+.register-flex5-col {
+  display: flex;
+  flex: 0 1 398px; }
+
+.register-flex5-spacer {
+  display: flex;
+  flex: 0 1 129px; }
+
+.register-flex-spacer5 {
+  display: flex;
+  flex: 0 0 auto;
+  min-height: 67.83px; }
+
+.register-flex6 {
+  display: flex; }
+
+.register-flex6.layout {
+  position: relative;
+  overflow: visible;
+  margin: 0px 14px; }
+
+.register-highlights {
+  font: 15px/1.2 "Poppins", Helvetica, Arial, serif;
+  color: #cecece;
+  letter-spacing: 0px; }
+
+.register-highlights.layout {
+  position: relative;
+  margin: 0px 0px 0.33px; }
+
+.register-flex6-spacer {
+  display: flex;
+  flex: 0 1 330.44px; }
+
+.register-flex6-col {
+  display: flex;
+  flex: 0 1 15.13px; }
+
+.register-flex.layout1 {
+  position: relative;
+  overflow: visible;
+  flex-grow: 1;
+  margin: 1.67px 0px 0px; }
+
+.register-img.layout1 {
+  position: relative;
+  height: 7.5px;
+  width: 8.4px;
+  min-width: 8.4px;
+  margin: 0px 3.36px; }
+
+.register-img.layout2 {
+  position: relative;
+  height: 9.17px;
+  width: 15.13px;
+  min-width: 15.13px;
+  margin: 0px; }
+
+.register-flex6-spacer1 {
+  display: flex;
+  flex: 0 1 6.43px; }
+
+.register-password {
+  font: 15px/1.2 "Poppins", Helvetica, Arial, serif;
+  color: #cecece;
+  letter-spacing: 0px; }
+
+.register-password.layout {
+  position: relative;
+  margin: 0px 0px 0.33px; }
+
+.register-flex-spacer6 {
+  display: flex;
+  flex: 0 0 auto;
+  min-height: 8.67px; }
+
+.register-flex8 {
+  display: flex; }
+
+.register-flex8.layout {
+  position: relative;
+  overflow: visible;
+  margin: 0px; }
+
+.register-flex8-col {
+  display: flex;
+  flex: 0 1 398px; }
+
+.register-flex8-spacer {
+  display: flex;
+  flex: 0 1 129px; }
+
+.register-flex-spacer7 {
+  display: flex;
+  flex: 0 0 auto;
+  min-height: 68.83px; }
+
+.register-cover-group {
+  display: flex;
+  background-color: #4e48c4;
+  border-radius: 9px 9px 9px 9px; }
+
+.register-cover-group.layout {
+  position: relative;
+  overflow: visible;
+  min-height: 42.99px;
+  width: 398px;
+  min-width: 398px;
+  margin: 0px auto; }
+
+.register-register {
+  display: flex;
+  justify-content: flex-end;
+  font: 500 16px/1.2 "Poppins", Helvetica, Arial, serif;
+  color: white;
+  text-align: right;
+  letter-spacing: 0px; }
+
+.register-register.layout {
+  position: relative;
+  width: 80.83px;
+  min-width: 80.83px;
+  margin: 13.12px auto 10.87px; }
