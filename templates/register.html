@@ -15,85 +15,93 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="/css/common.css" />
-    <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="/css/Signup.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/register_css/common.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/register_css/fonts.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/register_css/Register.css') }}" />
   </head>
 
   <body>
-    <div class="signup signup-content-box layout">
-      <h1 class="signup-sign-up layout">Sign Up</h1>
-      <div class="signup-flex layout">
-        <div class="signup-flex-col">
-          <div class="signup-flex1 layout">
-            <div
-              style="--src:url(/assets/485660d9ab695d450e6126b5acaa2f89.png)"
-              class="signup-icon layout"
-            ></div>
-            <div
-              style="--src:url(/assets/616b40aa11871a0e32cc7a285adde52a.png)"
-              class="signup-img layout"
-            ></div>
+    <div class="register register-group layout">
+      <div class="register-flex layout2">
+        <div class="register-flex-spacer"></div>
+        <h1 class="register-sign-up layout">Sign Up</h1>
+        <div class="register-flex-spacer1"></div>
+        <div class="register-flex1 layout">
+          <div class="register-flex1-col">
+            <div class="register-flex layout">
+              <div
+                style="--src:url({{ url_for('static', filename='/assets/5a131006ef81d6666e8b8a49f8bb6f3c.png') }})"
+                class="register-icon layout"
+              ></div>
+              <div
+                style="--src:url({{ url_for('static', filename='/assets/a9644975e80d8cf98b6e41addb4d9d76.png') }})"
+                class="register-img layout"
+              ></div>
+            </div>
+          </div>
+          <div class="register-flex1-spacer"></div>
+          <h5 class="register-email layout">EMAIL</h5>
+          <div class="register-flex1-spacer1"></div>
+          <h5 class="register-username layout">Username</h5>
+        </div>
+        <div class="register-flex-spacer2"></div>
+        <div class="register-flex3 layout">
+          <div class="register-flex3-col">
+            <div class="register-rect layout"></div>
+          </div>
+          <div class="register-flex3-spacer"></div>
+          <div class="register-flex3-col">
+            <div class="register-rect layout"></div>
           </div>
         </div>
-        <div class="signup-flex-spacer"></div>
-        <h5 class="signup-email layout">EMAIL</h5>
-        <div class="signup-flex-spacer1"></div>
-        <h5 class="signup-username layout">Username</h5>
-      </div>
-      <div class="signup-flex2 layout">
-        <div class="signup-flex2-col">
-          <div class="signup-rect layout"></div>
+        <div class="register-flex-spacer3"></div>
+        <div class="register-flex4 layout">
+          <h5 class="register-patient-name layout">Patient Name</h5>
+          <div class="register-flex4-spacer"></div>
+          <h5 class="register-contact-number layout">Contact Number</h5>
         </div>
-        <div class="signup-flex2-spacer"></div>
-        <div class="signup-flex2-col">
-          <div class="signup-rect layout"></div>
-        </div>
-      </div>
-      <div class="signup-flex layout1">
-        <h5 class="signup-patient-name layout">Patient Name</h5>
-        <div class="signup-flex3-spacer"></div>
-        <h5 class="signup-contact-number layout">Contact Number</h5>
-      </div>
-      <div class="signup-flex4 layout">
-        <div class="signup-flex4-col">
-          <div class="signup-rect layout"></div>
-        </div>
-        <div class="signup-flex4-spacer"></div>
-        <div class="signup-flex4-col">
-          <div class="signup-rect layout"></div>
-        </div>
-      </div>
-      <div class="signup-flex layout2">
-        <h5 class="signup-highlights layout">Date of Birth MM/DD/YYYY</h5>
-        <div class="signup-flex5-spacer"></div>
-        <div class="signup-flex5-col">
-          <div class="signup-flex6 layout">
-            <div
-              style="--src:url(/assets/11f3fd2b44c1af48fb02614dd05d740d.png)"
-              class="signup-img layout1"
-            ></div>
-            <div
-              style="--src:url(/assets/57a31eba8599f0eb63e1d87f9d774f6d.png)"
-              class="signup-img layout2"
-            ></div>
+        <div class="register-flex-spacer4"></div>
+        <div class="register-flex5 layout">
+          <div class="register-flex5-col">
+            <div class="register-rect layout"></div>
+          </div>
+          <div class="register-flex5-spacer"></div>
+          <div class="register-flex5-col">
+            <div class="register-rect layout"></div>
           </div>
         </div>
-        <div class="signup-flex5-spacer1"></div>
-        <h5 class="signup-password layout">Password</h5>
-      </div>
-      <div class="signup-flex7 layout">
-        <div class="signup-flex7-col">
-          <div class="signup-rect layout"></div>
+        <div class="register-flex-spacer5"></div>
+        <div class="register-flex6 layout">
+          <h5 class="register-highlights layout">Date of Birth MM/DD/YYYY</h5>
+          <div class="register-flex6-spacer"></div>
+          <div class="register-flex6-col">
+            <div class="register-flex layout1">
+              <div
+                style="--src:url({{ url_for('static', filename='/assets/7dc27a484d967ade218f59738533b97b.png') }})"
+                class="register-img layout1"
+              ></div>
+              <div
+                style="--src:url({{ url_for('static', filename='/assets/109360f487d51bc00559e9e43fbb2fe9.png') }})"
+                class="register-img layout2"
+              ></div>
+            </div>
+          </div>
+          <div class="register-flex6-spacer1"></div>
+          <h5 class="register-password layout">Password</h5>
         </div>
-        <div class="signup-flex7-spacer"></div>
-        <div class="signup-flex7-col">
-          <div class="signup-cover-group layout"></div>
+        <div class="register-flex-spacer6"></div>
+        <div class="register-flex8 layout">
+          <div class="register-flex8-col">
+            <div class="register-rect layout"></div>
+          </div>
+          <div class="register-flex8-spacer"></div>
+          <div class="register-flex8-col">
+            <div class="register-rect layout"></div>
+          </div>
         </div>
-      </div>
-      <div class="signup-content-box-row">
-        <div class="signup-group layout">
-          <h5 class="signup-register layout">Register</h5>
+        <div class="register-flex-spacer7"></div>
+        <div class="register-cover-group layout">
+          <h5 class="register-register layout">Register</h5>
         </div>
       </div>
     </div>
