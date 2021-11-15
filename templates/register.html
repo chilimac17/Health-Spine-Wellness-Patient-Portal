@@ -21,7 +21,7 @@
   </head>
 
   <body>
-    <div class="register register-group layout">
+    <form class="register register-group layout" action="{{ url_for('register') }}" method="post" autocomplete="off">
       <div class="register-flex layout2">
         <div class="register-flex-spacer"></div>
         <h1 class="register-sign-up layout">Sign Up</h1>
@@ -47,11 +47,11 @@
         <div class="register-flex-spacer2"></div>
         <div class="register-flex3 layout">
           <div class="register-flex3-col">
-            <div class="register-rect layout"></div>
+            <input class="register-rect layout register-email layout" type="email" name="email" placeholder="Email" id="email" required>
           </div>
           <div class="register-flex3-spacer"></div>
           <div class="register-flex3-col">
-            <div class="register-rect layout"></div>
+            <input class="register-rect layout register-username layout" type="text" name="username" placeholder="Username" id="username" required>
           </div>
         </div>
         <div class="register-flex-spacer3"></div>
@@ -63,11 +63,11 @@
         <div class="register-flex-spacer4"></div>
         <div class="register-flex5 layout">
           <div class="register-flex5-col">
-            <div class="register-rect layout"></div>
+            <input class="register-rect layout register-patient-name layout" type="text" name="Patient Name" placeholder="Patient Name" id="name" required>
           </div>
           <div class="register-flex5-spacer"></div>
           <div class="register-flex5-col">
-            <div class="register-rect layout"></div>
+            <input class="register-rect layout register-contact-number layout" type="tel" name="Contact Number" placeholder="123-456-7890" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
           </div>
         </div>
         <div class="register-flex-spacer5"></div>
@@ -92,18 +92,18 @@
         <div class="register-flex-spacer6"></div>
         <div class="register-flex8 layout">
           <div class="register-flex8-col">
-            <div class="register-rect layout"></div>
+            <input class="register-rect layout register-date layout" type="date" name="Date of Birth" placeholder="Date of Birth" id="dob" required>
           </div>
           <div class="register-flex8-spacer"></div>
           <div class="register-flex8-col">
-            <div class="register-rect layout"></div>
+            <input class="register-rect layout register-password layout" type="password" name="Password" placeholder="Password" id="password" required>
           </div>
         </div>
         <div class="register-flex-spacer7"></div>
         <div class="register-cover-group layout">
-          <h5 class="register-register layout">Register</h5>
+          <input class="register-cover-group layout register-register layout" type="submit" value="Register">
         </div>
       </div>
-    </div>
+    </form>
   </body>
 </html>
