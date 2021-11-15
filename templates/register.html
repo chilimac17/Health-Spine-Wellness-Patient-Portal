@@ -1,34 +1,101 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Register</title>
-		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-	</head>
-	<body>
-		<div class="register">
-			<h1>Register</h1>
-			<div class="links">
-				<a href="{{ url_for('login') }}">Login</a>
-				<a href="{{ url_for('register') }}" class="active">Register</a>
-			</div>
-			<form action="{{ url_for('register') }}" method="post" autocomplete="off">
-				<label for="username">
-					<i class="fas fa-user"></i>
-				</label>
-				<input type="text" name="username" placeholder="Username" id="username" required>
-				<label for="password">
-					<i class="fas fa-lock"></i>
-				</label>
-				<input type="password" name="password" placeholder="Password" id="password" required>
-				<label for="email">
-					<i class="fas fa-envelope"></i>
-				</label>
-				<input type="email" name="email" placeholder="Email" id="email" required>
-				<div class="msg">{{ msg }}</div>
-				<input type="submit" value="Register">
-			</form>
-		</div>
-	</body>
+  <!--  This source code is exported from pxCode, you can get more document from https://www.pxcode.io  -->
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="/css/Signup.css" />
+  </head>
+
+  <body>
+    <div class="signup signup-content-box layout">
+      <h1 class="signup-sign-up layout">Sign Up</h1>
+      <div class="signup-flex layout">
+        <div class="signup-flex-col">
+          <div class="signup-flex1 layout">
+            <div
+              style="--src:url(/assets/485660d9ab695d450e6126b5acaa2f89.png)"
+              class="signup-icon layout"
+            ></div>
+            <div
+              style="--src:url(/assets/616b40aa11871a0e32cc7a285adde52a.png)"
+              class="signup-img layout"
+            ></div>
+          </div>
+        </div>
+        <div class="signup-flex-spacer"></div>
+        <h5 class="signup-email layout">EMAIL</h5>
+        <div class="signup-flex-spacer1"></div>
+        <h5 class="signup-username layout">Username</h5>
+      </div>
+      <div class="signup-flex2 layout">
+        <div class="signup-flex2-col">
+          <div class="signup-rect layout"></div>
+        </div>
+        <div class="signup-flex2-spacer"></div>
+        <div class="signup-flex2-col">
+          <div class="signup-rect layout"></div>
+        </div>
+      </div>
+      <div class="signup-flex layout1">
+        <h5 class="signup-patient-name layout">Patient Name</h5>
+        <div class="signup-flex3-spacer"></div>
+        <h5 class="signup-contact-number layout">Contact Number</h5>
+      </div>
+      <div class="signup-flex4 layout">
+        <div class="signup-flex4-col">
+          <div class="signup-rect layout"></div>
+        </div>
+        <div class="signup-flex4-spacer"></div>
+        <div class="signup-flex4-col">
+          <div class="signup-rect layout"></div>
+        </div>
+      </div>
+      <div class="signup-flex layout2">
+        <h5 class="signup-highlights layout">Date of Birth MM/DD/YYYY</h5>
+        <div class="signup-flex5-spacer"></div>
+        <div class="signup-flex5-col">
+          <div class="signup-flex6 layout">
+            <div
+              style="--src:url(/assets/11f3fd2b44c1af48fb02614dd05d740d.png)"
+              class="signup-img layout1"
+            ></div>
+            <div
+              style="--src:url(/assets/57a31eba8599f0eb63e1d87f9d774f6d.png)"
+              class="signup-img layout2"
+            ></div>
+          </div>
+        </div>
+        <div class="signup-flex5-spacer1"></div>
+        <h5 class="signup-password layout">Password</h5>
+      </div>
+      <div class="signup-flex7 layout">
+        <div class="signup-flex7-col">
+          <div class="signup-rect layout"></div>
+        </div>
+        <div class="signup-flex7-spacer"></div>
+        <div class="signup-flex7-col">
+          <div class="signup-cover-group layout"></div>
+        </div>
+      </div>
+      <div class="signup-content-box-row">
+        <div class="signup-group layout">
+          <h5 class="signup-register layout">Register</h5>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

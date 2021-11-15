@@ -1,0 +1,440 @@
+/* This source code is exported from pxCode, you can get more document from https://www.pxcode.io */
+.signup-content-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #5369ae; }
+
+.signup-content-box.layout {
+  position: relative;
+  overflow: hidden;
+  min-height: 720px;
+  flex-grow: 1;
+  margin: 0px; }
+
+.signup-sign-up {
+  font: 700 30px/1.2 "Cabin", Helvetica, Arial, serif;
+  color: white;
+  letter-spacing: 0px; }
+  @media (max-width: 991.98px) {
+    .signup-sign-up {
+      align-items: flex-start;
+      justify-content: flex-start;
+      font-size: 29px;
+      text-align: left; } }
+  @media (max-width: 767.98px) {
+    .signup-sign-up {
+      align-items: flex-start;
+      justify-content: flex-start;
+      font-size: 25px;
+      text-align: left; } }
+
+.signup-sign-up.layout {
+  position: relative;
+  flex: 0 0 auto;
+  width: 160px;
+  min-width: 160px;
+  display: block;
+  margin: 149px auto 0px; }
+  @media (max-width: 1199.98px) {
+    .signup-sign-up.layout {
+      width: 160px;
+      min-width: 160px;
+      margin: 75px auto 0px; } }
+  @media (max-width: 991.98px) {
+    .signup-sign-up.layout {
+      width: 160px;
+      min-width: 160px;
+      margin: 38px auto 0px; } }
+  @media (max-width: 767.98px) {
+    .signup-sign-up.layout {
+      width: 160px;
+      min-width: 160px;
+      margin: 19px auto 0px; } }
+  @media (max-width: 575.98px) {
+    .signup-sign-up.layout {
+      width: 160px;
+      min-width: 160px;
+      margin: 10px auto 0px; } }
+
+.signup-flex {
+  display: flex; }
+
+.signup-flex.layout {
+  position: relative;
+  overflow: visible;
+  flex: 0 0 auto;
+  margin: 17px 173.33px 0px; }
+  @media (max-width: 1199.98px) {
+    .signup-flex.layout {
+      margin: 9px 87px 0px; } }
+  @media (max-width: 991.98px) {
+    .signup-flex.layout {
+      margin: 5px 44px 0px; } }
+  @media (max-width: 767.98px) {
+    .signup-flex.layout {
+      margin: 3px 22px 0px; } }
+  @media (max-width: 575.98px) {
+    .signup-flex.layout {
+      margin: 2px 11px 0px; } }
+
+.signup-flex-col {
+  display: flex;
+  flex: 0 1 13.33px; }
+
+.signup-flex1 {
+  display: flex;
+  flex-direction: column; }
+
+.signup-flex1.layout {
+  position: relative;
+  overflow: visible;
+  flex-grow: 1;
+  margin: 2.5px 0px 0.5px; }
+
+.signup-icon {
+  background: var(--src) center center/contain no-repeat; }
+
+.signup-icon.layout {
+  position: relative;
+  height: 6.67px;
+  width: 6.67px;
+  min-width: 6.67px;
+  margin: 0px 3.33px; }
+
+.signup-img {
+  background: var(--src) center center/contain no-repeat; }
+
+.signup-img.layout {
+  position: relative;
+  height: 5px;
+  width: 13.33px;
+  min-width: 13.33px;
+  margin: 3.33px 0px 0px; }
+
+.signup-flex-spacer {
+  display: flex;
+  flex: 0 1 9.33px; }
+
+.signup-email {
+  font: 15px/1.2 "Poppins", Helvetica, Arial, serif;
+  color: #cecece;
+  letter-spacing: 0px; }
+
+.signup-email.layout {
+  position: relative;
+  margin: 0px; }
+
+.signup-flex-spacer1 {
+  display: flex;
+  flex: 0 1 448px; }
+
+.signup-username {
+  font: 15px/1.2 "Poppins", Helvetica, Arial, serif;
+  color: #cecece;
+  letter-spacing: 0px; }
+
+.signup-username.layout {
+  position: relative;
+  margin: 0px; }
+
+.signup-flex2 {
+  display: flex; }
+  @media (max-width: 991.98px) {
+    .signup-flex2 {
+      flex-wrap: wrap; } }
+
+.signup-flex2.layout {
+  position: relative;
+  overflow: visible;
+  flex: 0 0 auto;
+  margin: 11px 156px 0px; }
+  @media (max-width: 1199.98px) {
+    .signup-flex2.layout {
+      margin: 6px 78px 0px; } }
+  @media (max-width: 991.98px) {
+    .signup-flex2.layout {
+      margin: 3px 39px 0px; } }
+  @media (max-width: 767.98px) {
+    .signup-flex2.layout {
+      margin: 2px 20px 0px; } }
+  @media (max-width: 575.98px) {
+    .signup-flex2.layout {
+      margin: 1px 10px 0px; } }
+
+.signup-flex2-col {
+  display: flex;
+  flex: 1 1 398px; }
+  @media (max-width: 991.98px) {
+    .signup-flex2-col {
+      flex: 0 0 100%; } }
+
+.signup-rect {
+  background-color: #f0f0ff;
+  border-radius: 8px 8px 8px 8px; }
+
+.signup-rect.layout {
+  position: relative;
+  height: 45.17px;
+  flex-grow: 1;
+  margin: 0px; }
+
+.signup-flex2-spacer {
+  display: flex;
+  flex: 0 1 122px; }
+  @media (max-width: 991.98px) {
+    .signup-flex2-spacer {
+      flex: 0 0 100%;
+      min-height: 20px; } }
+
+.signup-flex.layout1 {
+  position: relative;
+  overflow: visible;
+  flex: 0 0 auto;
+  margin: 61.83px 170px 0px; }
+  @media (max-width: 1199.98px) {
+    .signup-flex.layout1 {
+      margin: 31px 85px 0px; } }
+  @media (max-width: 991.98px) {
+    .signup-flex.layout1 {
+      margin: 16px 43px 0px; } }
+  @media (max-width: 767.98px) {
+    .signup-flex.layout1 {
+      margin: 8px 22px 0px; } }
+  @media (max-width: 575.98px) {
+    .signup-flex.layout1 {
+      margin: 4px 11px 0px; } }
+
+.signup-patient-name {
+  font: 15px/1.2 "Poppins", Helvetica, Arial, serif;
+  color: #cecece;
+  letter-spacing: 0px; }
+
+.signup-patient-name.layout {
+  position: relative;
+  margin: 1px 0px 0px; }
+
+.signup-flex3-spacer {
+  display: flex;
+  flex: 0 1 413px; }
+
+.signup-contact-number {
+  font: 15px/1.2 "Poppins", Helvetica, Arial, serif;
+  color: #cecece;
+  letter-spacing: 0px; }
+
+.signup-contact-number.layout {
+  position: relative;
+  margin: 0px 0px 1px; }
+
+.signup-flex4 {
+  display: flex; }
+  @media (max-width: 991.98px) {
+    .signup-flex4 {
+      flex-wrap: wrap; } }
+
+.signup-flex4.layout {
+  position: relative;
+  overflow: visible;
+  flex: 0 0 auto;
+  margin: 11px 156px 0px; }
+  @media (max-width: 1199.98px) {
+    .signup-flex4.layout {
+      margin: 6px 78px 0px; } }
+  @media (max-width: 991.98px) {
+    .signup-flex4.layout {
+      margin: 3px 39px 0px; } }
+  @media (max-width: 767.98px) {
+    .signup-flex4.layout {
+      margin: 2px 20px 0px; } }
+  @media (max-width: 575.98px) {
+    .signup-flex4.layout {
+      margin: 1px 10px 0px; } }
+
+.signup-flex4-col {
+  display: flex;
+  flex: 1 1 398px; }
+  @media (max-width: 991.98px) {
+    .signup-flex4-col {
+      flex: 0 0 100%; } }
+
+.signup-flex4-spacer {
+  display: flex;
+  flex: 0 1 124px; }
+  @media (max-width: 991.98px) {
+    .signup-flex4-spacer {
+      flex: 0 0 100%;
+      min-height: 20px; } }
+
+.signup-flex.layout2 {
+  position: relative;
+  overflow: visible;
+  flex: 0 0 auto;
+  margin: 67.83px 170px 0px; }
+  @media (max-width: 1199.98px) {
+    .signup-flex.layout2 {
+      margin: 34px 85px 0px; } }
+  @media (max-width: 991.98px) {
+    .signup-flex.layout2 {
+      margin: 17px 43px 0px; } }
+  @media (max-width: 767.98px) {
+    .signup-flex.layout2 {
+      margin: 9px 22px 0px; } }
+  @media (max-width: 575.98px) {
+    .signup-flex.layout2 {
+      margin: 5px 11px 0px; } }
+
+.signup-highlights {
+  font: 15px/1.2 "Poppins", Helvetica, Arial, serif;
+  color: #cecece;
+  letter-spacing: 0px; }
+
+.signup-highlights.layout {
+  position: relative;
+  margin: 0px 0px 0.33px; }
+
+.signup-flex5-spacer {
+  display: flex;
+  flex: 0 1 325.5px; }
+
+.signup-flex5-col {
+  display: flex;
+  flex: 0 1 15px; }
+
+.signup-flex6 {
+  display: flex;
+  flex-direction: column; }
+
+.signup-flex6.layout {
+  position: relative;
+  overflow: visible;
+  flex-grow: 1;
+  margin: 1.67px 0px 0px; }
+
+.signup-img.layout1 {
+  position: relative;
+  height: 7.5px;
+  width: 8.33px;
+  min-width: 8.33px;
+  margin: 0px 3.33px; }
+
+.signup-img.layout2 {
+  position: relative;
+  height: 9.17px;
+  width: 15px;
+  min-width: 15px;
+  margin: 0px; }
+
+.signup-flex5-spacer1 {
+  display: flex;
+  flex: 0 1 6.5px; }
+
+.signup-password {
+  font: 15px/1.2 "Poppins", Helvetica, Arial, serif;
+  color: #cecece;
+  letter-spacing: 0px; }
+
+.signup-password.layout {
+  position: relative;
+  margin: 0px 0px 0.33px; }
+
+.signup-flex7 {
+  display: flex; }
+  @media (max-width: 991.98px) {
+    .signup-flex7 {
+      flex-wrap: wrap; } }
+
+.signup-flex7.layout {
+  position: relative;
+  overflow: visible;
+  flex: 0 0 auto;
+  margin: 8.67px 156px 0px; }
+  @media (max-width: 1199.98px) {
+    .signup-flex7.layout {
+      margin: 4px 78px 0px; } }
+  @media (max-width: 991.98px) {
+    .signup-flex7.layout {
+      margin: 2px 39px 0px; } }
+  @media (max-width: 767.98px) {
+    .signup-flex7.layout {
+      margin: 1px 20px 0px; } }
+  @media (max-width: 575.98px) {
+    .signup-flex7.layout {
+      margin: 1px 10px 0px; } }
+
+.signup-flex7-col {
+  display: flex;
+  flex: 1 1 398px; }
+  @media (max-width: 991.98px) {
+    .signup-flex7-col {
+      flex: 0 0 100%; } }
+
+.signup-flex7-spacer {
+  display: flex;
+  flex: 0 1 124px; }
+  @media (max-width: 991.98px) {
+    .signup-flex7-spacer {
+      flex: 0 0 100%;
+      min-height: 20px; } }
+
+.signup-cover-group {
+  display: flex;
+  background-color: #f0f0ff;
+  border-radius: 8px 8px 8px 8px; }
+
+.signup-cover-group.layout {
+  position: relative;
+  overflow: visible;
+  min-height: 45.17px;
+  flex-grow: 1;
+  margin: 0px; }
+
+.signup-content-box-row {
+  display: flex;
+  flex: 0 0 auto; }
+
+.signup-group {
+  display: flex;
+  background-color: #4e48c4;
+  box-shadow: 0px 4px 61px 0px rgba(78, 72, 196, 0.403922);
+  border-radius: 9px 9px 9px 9px; }
+
+.signup-group.layout {
+  position: relative;
+  overflow: visible;
+  height: 42.99px;
+  width: 398px;
+  min-width: 398px;
+  margin: 68.83px auto 55.01px; }
+  @media (max-width: 1199.98px) {
+    .signup-group.layout {
+      height: 42.99px;
+      width: 398px;
+      min-width: 398px;
+      margin: 34px auto 28px; } }
+  @media (max-width: 991.98px) {
+    .signup-group.layout {
+      height: 42.99px;
+      width: 398px;
+      min-width: 398px;
+      margin: 25px auto; } }
+  @media (max-width: 575.98px) {
+    .signup-group.layout {
+      height: 42.99px;
+      width: 299px;
+      min-width: 299px;
+      margin: 25px auto; } }
+
+.signup-register {
+  font: 500 16px/1.2 "Poppins", Helvetica, Arial, serif;
+  color: white;
+  letter-spacing: 0px; }
+
+.signup-register.layout {
+  position: relative;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 13.12px 0px 0px 170.42px; }

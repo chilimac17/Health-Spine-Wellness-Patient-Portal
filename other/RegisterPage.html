@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <!--  This source code is exported from pxCode, you can get more document from https://www.pxcode.io  -->
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/register_css/common.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/register_css/fonts.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/register_css/Register.css') }}" />
+
+    <script src="https://cdn.jsdelivr.net/gh/px2code/posize/build/v1.00.js"></script>
+  </head>
+
+  <body>
+    <form action="{{ url_for('register') }}"  method="post" autocomplete="off" class="register register-group layout">
+      <div class="register-flex layout">
+        <div
+          style="--src:url({{ url_for('static', filename='assets/34fc23973cc3eb66ae5e96ffb566f358.png') }})"
+          class="register-img layout"
+        ></div>
+        <div class="register-flex-spacer"></div>
+        <h1 class="register-sign-up layout">Sign Up</h1>
+        <div class="register-flex-spacer1"></div>
+        <div class="register-cover-group layout">
+          <h5 class="register-enter-email layout">Enter Email</h5>
+        </div>
+        <div class="register-flex-spacer2"></div>
+        <div class="register-cover-group layout">
+          <h5 class="register-patient-name layout">Patient Name</h5>
+        </div>
+        <div class="register-flex-spacer3"></div>
+        <div class="register-cover-group layout">
+          <h5 class="register-contact-number layout">Contact number</h5>
+        </div>
+        <div class="register-flex-spacer4"></div>
+        <div class="register-group1 layout">
+          <div class="register-cover-group layout3">
+            <px-posize x="27px 196fr 175fr" y="15px minmax(0px, 18fr) 12.17fr"
+              ><div class="register-txt">
+                Date of Birth MM/DD/YYYY
+              </div></px-posize
+            >
+          </div>
+          <div class="register-cover-group layout4">
+            <div class="register-flex1 layout">
+              <h5 class="register-password layout">Password</h5>
+              <div class="register-flex1-spacer"></div>
+            </div>
+          </div>
+        </div>
+        <div class="register-flex-spacer5"></div>
+        <div class="register-cover-group5 layout">
+          <h5 class="register-register layout">Register</h5>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
