@@ -21,7 +21,7 @@
   </head>
 
   <body>
-    <div class="schedule1 schedule1-content-box layout">
+    <form class="schedule1 schedule1-content-box layout" action="{{ url_for('schedule1') }}" method="post">
       <div class="schedule1-content-box-row">
         <div class="schedule1-content-box1 layout">
           <div class="schedule1-content-box1-col">
@@ -138,6 +138,6 @@
           <h1 class="schedule1-continue layout"><a class="schedule1-continue layout" href="{{ url_for('schedule2') }}">Continue</a></h1>
         </div>
       </div>
-    </div>
+    </form>
   </body>
 </html>

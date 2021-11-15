@@ -15,13 +15,13 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="static/schedule2_css/common.css" />
-    <link rel="stylesheet" type="text/css" href="static/schedule2_css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="static/schedule2_css/Schedule2.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/schedule2_css/common.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/schedule2_css/fonts.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/schedule2_css/Schedule2.css') }}" />
   </head>
 
   <body>
-    <div class="schedule2 schedule2-content-box layout">
+    <form class="schedule2 schedule2-content-box layout" action="{{ url_for('schedule2') }}" method="post">
       <div class="schedule2-content-box-row">
         <div class="schedule2-content-box1 layout">
           <div class="schedule2-content-box1-col">
@@ -95,11 +95,11 @@
       <div class="schedule2-content-box-row4">
         <div class="schedule2-flex layout1">
           <div class="schedule2-flex1-col">
-            <div class="schedule2-rect layout"></div>
+            <input class="schedule2-rect layout schedule2-date layout" type="date" name="date" placeholder="Date" id="date" required>
           </div>
           <div class="schedule2-flex1-spacer"></div>
           <div class="schedule2-flex1-col">
-            <div class="schedule2-rect layout1"></div>
+            <input class="schedule2-rect layout1 schedule2-time layout" type="time" name="time" placeholder="Time" id="time" required>
           </div>
         </div>
       </div>
@@ -107,13 +107,13 @@
         <h2 class="schedule2-medium-title2 layout">Add a Note (optional)</h2>
       </div>
       <div class="schedule2-content-box-row6">
-        <div class="schedule2-rect2 layout"></div>
+        <input class="schedule2-rect2 layout" type="text" name="add_info" placeholder="Additional Info" id="add_info" required>
       </div>
       <div class="schedule2-content-box-row7">
         <div class="schedule2-cover-group layout">
-          <h1 class="schedule2-continue layout">Continue</h1>
+          <input class="schedule2-cover-group layout schedule2-continue layout" type="submit" value="Submit">
         </div>
       </div>
-    </div>
+    </form>
   </body>
 </html>
