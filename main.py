@@ -153,5 +153,13 @@ def contactUs():
 def services():
     return render_template('Service.html')
 
+@app.route('/schedule')
+def schedule1():
+    return render_template('Schedule1.html')
+
+@app.route('/schedule2')
+def schedule2():
+    return render_template('Schedule2.html')
+
 if __name__ == '__main__':
     app.run()
