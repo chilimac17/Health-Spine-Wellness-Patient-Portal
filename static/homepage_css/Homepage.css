@@ -695,6 +695,11 @@
       font-size: 38px;
       text-align: center; } }
 
+.buttonFindOutMore {padding:30px 150px;
+  position:relative;
+  top: 0px;
+  left: 190px;}
+
 .homepage-cover-group1 {
   display: flex;
   background-color: #225fea;
