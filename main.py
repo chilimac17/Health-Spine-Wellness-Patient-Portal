@@ -161,7 +161,7 @@ def services():
 def schedule1():
     return render_template('Schedule1.html')
 
-@app.route('/schedule2')
+@app.route('/schedule2gol')
 def schedule2():
     return render_template('Schedule2.html')
 
