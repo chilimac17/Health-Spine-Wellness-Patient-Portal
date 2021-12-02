@@ -59,6 +59,7 @@
               <h1 class="my-info-my-information1 layout">My Information</h1>
               <div class="my-info-flex layout">
                 <div class="my-info-flex2-col">
+
                   <h1 class="my-info-first-name layout">First Name</h1>
                 </div>
                 <div class="my-info-flex2-spacer"></div>
@@ -68,11 +69,13 @@
               </div>
               <div class="my-info-flex layout1">
                 <div class="my-info-flex3-col">
-                  <div class="my-info-rect layout"></div>
+                  <input class="my-info-rect layout my-info-email layout" type="text" name="first_name" placeholder="First Name" id="first_name" required>
+                  <!---<div class="my-info-rect layout"></div>--->
                 </div>
                 <div class="my-info-flex3-spacer"></div>
                 <div class="my-info-flex3-col">
-                  <div class="my-info-rect layout"></div>
+                  <input class="my-info-rect layout my-info-email layout" type="email" name="email" placeholder="Email" id="email" required>
+                  <!---<div class="my-info-rect layout"></div>--->
                 </div>
               </div>
             </div>
@@ -104,15 +107,18 @@
       <div class="my-info-content-box-row3">
         <div class="my-info-flex layout4">
           <div class="my-info-flex5-col">
-            <div class="my-info-rect layout2"></div>
+             <input class="my-info-rect layout2 my-info-last-name layout" type="text" name="last_name" placeholder="Last Name" id="last_name" required>
+           <!---<div class="my-info-rect layout2"></div>--->
           </div>
           <div class="my-info-flex5-spacer"></div>
           <div class="my-info-flex5-col">
-            <div class="my-info-rect layout3"></div>
+             <input class="my-info-rect layout3 my-info-pain-level layout" type="text" name="pain_level" placeholder="(Low)1-10(High)" id="pain_level" required>
+            <!---<div class="my-info-rect layout3"></div>--->
           </div>
           <div class="my-info-flex5-spacer1"></div>
           <div class="my-info-flex5-col">
-            <div class="my-info-rect layout4"></div>
+            <input class="my-info-rect layout4 my-info-big-title layout" type="text" name="pain_level_update" placeholder="(Low)1-10(High)" id="pain_level_update" required>
+            <!---<div class="my-info-rect layout4"></div>--->
           </div>
         </div>
       </div>
@@ -124,21 +130,25 @@
           <div class="my-info-flex6-col">
             <div class="my-info-flex7 layout">
               <h1 class="my-info-current-symptoms layout">Current Symptoms</h1>
-              <div class="my-info-rect layout5"></div>
+              <input class="my-info-rect layout5 " type="text" name="current_symptoms" placeholder="Please enter your current symptoms" id="current_symptoms" required>
+              <!---<div class="my-info-rect layout5"></div>--->
             </div>
           </div>
           <div class="my-info-flex6-spacer"></div>
           <div class="my-info-flex6-col1">
             <div class="my-info-flex8 layout">
               <h1 class="my-info-dob layout">DOB</h1>
-              <div class="my-info-rect layout6"></div>
+              <input class="my-info-rect layout6 my-info-date layout" type="date" name="dob" placeholder="Date of Birth" id="dob" required>
+              <!---<div class="my-info-rect layout6"></div>--->
               <h1 class="my-info-sex layout">Sex</h1>
-              <div class="my-info-rect layout7"></div>
+              <input class="my-info-rect layout7 " type="gender" name="gender" placeholder="Enter gender" id="gender" required>
+             <!---<div class="my-info-rect layout7"></div>--->
             </div>
           </div>
           <div class="my-info-flex6-spacer1"></div>
           <div class="my-info-flex6-col2">
-            <div class="my-info-rect layout8"></div>
+            <input class="my-info-rect layout8 " type="text" name="update_symptoms" placeholder="Update you symptoms" id="update_symptoms" required>
+            <!---<div class="my-info-rect layout8"></div>--->
           </div>
         </div>
       </div>
