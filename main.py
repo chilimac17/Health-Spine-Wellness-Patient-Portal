@@ -152,6 +152,10 @@ def patient_info():
 def patient_appointments():
     return render_template('MyAppointments.html',events=events)
 
+@app.route('/staffappointments')
+def staff_appointments():
+    return render_template('patientappointments.html',events=events)
+
 @app.route('/patientinfoupdate')
 def patient_info_update():
     return render_template('Profile.html')
