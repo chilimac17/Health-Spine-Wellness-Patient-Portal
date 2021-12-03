@@ -27,6 +27,25 @@ mysql = MySQL(app)
 
 # http://localhost:5000/pythonlogin/ - this will be the login page, we need to use both GET and POST requests
 
+#creating list for calendar
+events = [
+    {
+        'todo' : 'Evaluation with Dr.Chillemi',
+        'date' : '2021-12-17',
+
+    },
+    {
+        'todo' : 'Treatment by Dr.Chillemi',
+        'date' : '2021-12-12'
+    },
+{
+        'todo' : 'Treatment by Dr.K',
+        'date' : '2021-12-14'
+    }
+
+
+]
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     # Output message if something goes wrong...
@@ -131,7 +150,11 @@ def patient_info():
 
 @app.route('/patientappointments')
 def patient_appointments():
-    return render_template('MyAppointments.html')
+    return render_template('MyAppointments.html',events=events)
+
+@app.route('/staffappointments')
+def staff_appointments():
+    return render_template('patientappointments.html',events=events)
 
 @app.route('/patientinfoupdate')
 def patient_info_update():
@@ -139,7 +162,7 @@ def patient_info_update():
 
 @app.route('/calendar')
 def calendar():
-    return render_template('calender.html')
+    return render_template('Calendar.html',events = events)
 
 @app.route('/')
 def homepage():
