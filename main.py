@@ -139,7 +139,7 @@ def patient_info_update():
 
 @app.route('/calendar')
 def calendar():
-    return render_template('calender.html')
+    return render_template('Calendar.html')
 
 @app.route('/')
 def homepage():

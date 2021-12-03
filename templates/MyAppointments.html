@@ -3,6 +3,19 @@
 
   <head>
     <meta charset="utf-8" />
+    <link rel='stylesheet' href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+      });
+
+    </script>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -57,9 +70,9 @@
         <div class="my-appointments-flex layout">
           <div class="my-appointments-flex-col">
             <div
-              style="--src:url({{ url_for('static', filename='assets/4143d99edc352ea5f54cb253535faecc.png')}})"
-              class="my-appointments-img layout1"
-            ></div>
+              id='calendar'
+            > <!---(OLD STATEMENT ABOVE FOR ID) style="--src:url({{ url_for('static', filename='assets/4143d99edc352ea5f54cb253535faecc.png')}})"
+              class="my-appointments-img layout1"---></div>
           </div>
           <div class="my-appointments-flex-spacer"></div>
           <div class="my-appointments-flex-col1">
@@ -74,3 +87,5 @@
     </div>
   </body>
 </html>
+ <!---style="--src:url({{ url_for('static', filename='assets/4143d99edc352ea5f54cb253535faecc.png')}})"
+              class="my-appointments-img layout1"--->
