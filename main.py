@@ -182,11 +182,17 @@ def services():
 
 @app.route('/schedule', methods=['GET', 'POST'])
 def schedule1():
-
+    cursor = mysql.connection.cursor()
+    cursor.execute('''INSERT INTO Appointments * FROM (Source of data)''')
+    mysql.connection.commit()
     return render_template('Schedule1.html')
 
 @app.route('/schedule2gol',methods=['GET', 'POST'])
 def schedule2():
+    cursor = mysql.connection.cursor()
+
+    cursor.execute('''INSERT INTO Appointments * FROM (Source of data)''')
+    mysql.connection.commit()
 
     return render_template('Schedule2.html')
 
