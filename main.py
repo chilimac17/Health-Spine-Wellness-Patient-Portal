@@ -180,12 +180,14 @@ def contactUs():
 def services():
     return render_template('Service.html')
 
-@app.route('/schedule')
+@app.route('/schedule', methods=['GET', 'POST'])
 def schedule1():
+
     return render_template('Schedule1.html')
 
-@app.route('/schedule2gol')
+@app.route('/schedule2gol',methods=['GET', 'POST'])
 def schedule2():
+
     return render_template('Schedule2.html')
 
 if __name__ == '__main__':
