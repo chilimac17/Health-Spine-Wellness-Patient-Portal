@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="static/my_appointments_css/common.css" />
+    <link rel="stylesheet" type="text/css" href="static/my_appointments_css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="static/my_appointments_css/MyAppointments.css" />
+
+  </head>
+
+  <body>
+    <div
+      class="my-appointments my-appointments-content-box layout">
+      <div class="my-appointments-content-box-row">
+        <div class="my-appointments-content-box1 layout">
+          <div class="my-appointments-content-box1-col">
+            <div
+              style="--src:url({{ url_for('static', filename='assets/219699db006418aa7dd4bc6946145a09.png')}})"
+              class="my-appointments-img layout"
+            ></div>
+          </div>
+          <div class="my-appointments-content-box1-spacer"></div>
+          <div class="my-appointments-content-box1-col1">
+
+            <!---h2 class="my-appointments-home layout"><a class="my-appointments-home layout" href="{{ url_for('homepage') }}">Home</a></h2!--->
+          </div>
+          <div class="my-appointments-content-box1-spacer1"></div>
+          <div class="my-appointments-content-box1-col2">
+          </div>
+          <div class="my-appointments-content-box1-spacer2"></div>
+          <div class="my-appointments-content-box1-col3">
+            <!---h2 class="my-appointments-my-appointments layout"><a class="my-appointments-my-information layout" href="{{ url_for('patient_appointments') }}">My Appointments</a></h2!--->
+          </div>
+          <div class="my-appointments-content-box1-spacer3"></div>
+          <!-- <div class="my-appointments-content-box1-col4">
+            <h2 class="my-appointments-profile layout"><a class="my-appointments-profile layout" href="{{ url_for('patient_info') }}">Profile</a></h2>
+          </div>
+          <div class="my-appointments-content-box1-spacer4"></div> -->
+           <div class="my-appointments-content-box1-col2">
+            <h2 class="my-appointments-my-information layout"><a class="my-appointments-my-information layout" href="{{ url_for('doctor_appointments') }}">Go Back</a></h2>
+          </div>
+          <div class="my-appointments-content-box1-col5">
+            <h2 class="my-appointments-log-out layout"><a class="my-appointments-profile layout" href="{{ url_for('homepage') }}">Log Out</a></h2>
+          </div>
+        </div>
+      </div>
+      <div class="my-appointments-content-box-row1">
+        <div class="my-appointments-flex layout">
+          </div>
+          <div class="my-appointments-flex-spacer"></div>
+          <div class="my-appointments-flex-col1">
+            <div class="my-appointments-flex1 layout">
+                <div class="contact-us-flex5-col">
+                  <div class="contact-us-flex6 layout">
+                  </div>
+                    <form class="contact-us-rect layout1 contact-us-first-name" action="action_page.php">
+                        <input type="text" placeholder="Search.." name="search">
+                        <input class="contact-us-cover-group layout layout contact-us-submit layout" type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
