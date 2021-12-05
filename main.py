@@ -156,6 +156,14 @@ def patient_appointments():
 def staff_appointments():
     return render_template('patientappointments.html',events=events)
 
+@app.route('/doctorappointments')
+def doctor_appointments():
+    return render_template('docappointment.html',events=events)
+
+@app.route('/patientsearch')
+def patient_search():
+    return render_template('patientSearch.html',events=events)
+
 @app.route('/patientinfoupdate')
 def patient_info_update():
     return render_template('Profile.html')
