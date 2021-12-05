@@ -3,6 +3,7 @@ from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
 import config
+from datetime import datetime, timedelta
 
 # To start go into CDM
 # run these commands
@@ -190,17 +191,47 @@ def services():
 
 @app.route('/schedule', methods=['GET', 'POST'])
 def schedule1():
+    # Fetch list of doctors
     cursor = mysql.connection.cursor()
-    cursor.execute('''INSERT INTO Appointments * FROM (Source of data)''')
-    mysql.connection.commit()
-    return render_template('Schedule1.html')
+    cursor.execute('SELECT first_name, last_name FROM Doctors')
+    doctors = cursor.fetchall()
 
-@app.route('/schedule2gol',methods=['GET', 'POST'])
+    # Check if POST requests exist (user-submitted form)
+    if request.method == 'POST' and 'first_name' in request.form and 'last_name' in request.form and 'email' in request.form and 'phone' in request.form and 'doctor' in request.form:
+        # Save POST requests in session
+        session['appointment'] = request.form
+        # Redirect to next schedule page
+        return redirect(url_for('schedule2'))
+
+    return render_template('Schedule1.html', doctors=doctors)
+
+@app.route('/schedule2',methods=['GET', 'POST'])
 def schedule2():
-    cursor = mysql.connection.cursor()
+    # Check if POST requests exist (user-submitted form)
+    if request.method == 'POST' and 'appointment' in session and 'date' in request.form and 'time' in request.form and 'add_info' in request.form:
+        # Update appointments POST requests in session
+        session['appointment'].update(request.form)
 
-    cursor.execute('''INSERT INTO Appointments * FROM (Source of data)''')
-    mysql.connection.commit()
+        # Create variables for easy access
+        doctor = session['appointment']['doctor']
+        email = session['appointment']['email']
+        first_name = session['appointment']['first_name']
+        last_name = session['appointment']['last_name']
+        phone = session['appointment']['phone']
+        date = session['appointment']['date']
+        start_time = session['appointment']['time']
+        end_time = (datetime.strptime(start_time, '%H:%M') + timedelta(hours=1)).strftime('%H:%M') # Create end time (one hour after start time)
+        add_info = session['appointment']['add_info']
+        patient = session['username']
+        print((date, start_time, end_time, patient, doctor, add_info, phone, email,))
+
+        # Insert appointment into Appointments table
+        cursor = mysql.connection.cursor()
+        cursor.execute('INSERT INTO Appointments (date, start_time, end_time, patient, doctor, additional_info, phone, email) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)', (date, start_time, end_time, patient, doctor, add_info, phone, email,))
+        mysql.connection.commit()
+
+        # Redirect to patient appointments page
+        return redirect(url_for('patient_appointments'))
 
     return render_template('Schedule2.html')
 
