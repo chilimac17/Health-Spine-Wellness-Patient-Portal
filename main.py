@@ -144,10 +144,54 @@ def profile():
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
 
-#possible dup
 @app.route('/patientinfo')
 def patient_info():
-    return render_template('My_info.html')
+    if 'loggedin' in session:
+        # Fetch patient record
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM Patient WHERE username = %s', (session['username'],))
+        patient = cursor.fetchone()
+        # Fetch email
+        cursor.execute('SELECT email FROM Users WHERE username = %s', (session['username'],))
+        user = cursor.fetchone()
+        return render_template('My_info.html', first_name=patient['first_name'], last_name=patient['last_name'], dob=patient['dob'], sex=patient['sex'], pain_level=patient['pain_level'], symptoms=patient['symptoms'], email=user['email'])
+
+    # User is not logged in, redirect to login page
+    return redirect(url_for('login'))
+
+@app.route('/editinfo', methods=['GET', 'POST'])
+def edit_info():
+    if 'loggedin' in session:
+        # Fetch patient record
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM Patient WHERE username = %s', (session['username'],))
+        patient = cursor.fetchone()
+        # Fetch email
+        cursor.execute('SELECT email FROM Users WHERE username = %s', (session['username'],))
+        user = cursor.fetchone()
+
+        # Check if POST requests exist
+        if request.method == 'POST' and 'first_name' in request.form and 'last_name' in request.form and 'dob' in request.form and 'sex' in request.form and 'pain_level' in request.form and 'symptoms' in request.form and 'email' in request.form:
+            # Create variables for easy access
+            first_name = request.form['first_name']
+            last_name = request.form['last_name']
+            dob = request.form['dob']
+            sex = request.form['sex']
+            pain_level = request.form['pain_level']
+            symptoms = request.form['symptoms']
+            email = request.form['email']
+            print(request.form)
+
+            # Update user and patient information
+            cursor.execute('UPDATE Users SET email = %s WHERE username = %s', (email, session['username'],))
+            cursor.execute('UPDATE Patient SET first_name = %s, last_name = %s, dob = %s, sex = %s, pain_level = %s, symptoms = %s', (first_name, last_name, dob, sex, pain_level, symptoms))
+            mysql.connection.commit()
+
+            return redirect(url_for('patient_info'))
+
+        return render_template('EditInfo.html', first_name=patient['first_name'], last_name=patient['last_name'], dob=patient['dob'], sex=patient['sex'], pain_level=patient['pain_level'], symptoms=patient['symptoms'], email=user['email'])
+    # User is not logged in, redirect to login page
+    return redirect(url_for('login'))
 
 @app.route('/patientappointments')
 def patient_appointments():
@@ -226,7 +270,7 @@ def schedule2():
         print((date, start_time, end_time, patient, doctor, add_info, phone, email,))
 
         # Insert appointment into Appointments table
-        cursor = mysql.connection.cursor()
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('INSERT INTO Appointments (date, start_time, end_time, patient, doctor, additional_info, phone, email) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)', (date, start_time, end_time, patient, doctor, add_info, phone, email,))
         mysql.connection.commit()
 

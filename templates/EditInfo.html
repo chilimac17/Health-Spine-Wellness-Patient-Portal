@@ -21,7 +21,7 @@
   </head>
 
   <body>
-    <div class="my-info my-info-content-box layout">
+    <form class="my-info my-info-content-box layout" action="{{ url_for('edit_info') }}" method="post">
       <div class="my-info-content-box-row">
         <div class="my-info-content-box1 layout">
           <div class="my-info-content-box1-col">
@@ -69,12 +69,12 @@
               </div>
               <div class="my-info-flex layout1">
                 <div class="my-info-flex3-col">
-                  <input class="my-info-rect layout my-info-email layout" type="text" name="first_name" placeholder="First Name" value="{{ first_name }}" id="first_name" readonly>
+                  <input class="my-info-rect layout my-info-email layout" type="text" name="first_name" placeholder="First Name" value="{{ first_name }}" id="first_name" required>
                   <!---<div class="my-info-rect layout"></div>--->
                 </div>
                 <div class="my-info-flex3-spacer"></div>
                 <div class="my-info-flex3-col">
-                  <input class="my-info-rect layout my-info-email layout" type="email" name="email" placeholder="Email" value="{{ email }}" id="email" readonly>
+                  <input class="my-info-rect layout my-info-email layout" type="email" name="email" placeholder="Email" value="{{ email }}" id="email" required>
                   <!---<div class="my-info-rect layout"></div>--->
                 </div>
               </div>
@@ -107,28 +107,29 @@
       <div class="my-info-content-box-row3">
         <div class="my-info-flex layout4">
           <div class="my-info-flex5-col">
-             <input class="my-info-rect layout2 my-info-last-name layout" type="text" name="last_name" placeholder="Last Name" value="{{ last_name }}" id="last_name" readonly>
+             <input class="my-info-rect layout2 my-info-last-name layout" type="text" name="last_name" placeholder="Last Name" value="{{ last_name }}" id="last_name" required>
            <!---<div class="my-info-rect layout2"></div>--->
           </div>
           <div class="my-info-flex5-spacer"></div>
           <div class="my-info-flex5-col">
-             <input class="my-info-rect layout3 my-info-pain-level layout" type="text" name="pain_level" placeholder="(Low) 1-10 (High)" value="{{ pain_level }}" id="pain_level" readonly>
+             <select class="my-info-rect layout3 my-info-pain-level layout" type="text" name="pain_level" placeholder="(Low) 1-10 (High)" value="{{ pain_level }}" id="pain_level" required>
+               <option value=1>1</option>
+               <option value=2>2</option>
+               <option value=3>3</option>
+               <option value=4>4</option>
+               <option value=5>5</option>
+               <option value=6>6</option>
+               <option value=7>7</option>
+               <option value=8>8</option>
+               <option value=9>9</option>
+               <option value=10>10</option>
+            </select>
             <!---<div class="my-info-rect layout3"></div>--->
           </div>
           <div class="my-info-flex5-spacer1"></div>
           <div class="my-info-flex5-col">
 <!--            <select class="my-info-rect layout4 my-info-big-title layout" name="pain_level" id="pain_level" optional>-->
-<!--              <option value=1>1</option>-->
-<!--              <option value=2>2</option>-->
-<!--              <option value=3>3</option>-->
-<!--              <option value=4>4</option>-->
-<!--              <option value=5>5</option>-->
-<!--              <option value=6>6</option>-->
-<!--              <option value=7>7</option>-->
-<!--              <option value=8>8</option>-->
-<!--              <option value=9>9</option>-->
-<!--              <option value=10>10</option>-->
-<!--            </select>-->
+
             <!---<div class="my-info-rect layout4"></div>--->
           </div>
         </div>
@@ -141,7 +142,7 @@
           <div class="my-info-flex6-col">
             <div class="my-info-flex7 layout">
               <h1 class="my-info-current-symptoms layout">Current Symptoms</h1>
-              <input class="my-info-rect layout5 " type="text" name="symptoms" placeholder="No current symptoms" value="{{ symptoms }}" id="symptoms" readonly>
+              <input class="my-info-rect layout5 " type="text" name="symptoms" placeholder="No current symptoms" value="{{ symptoms }}" id="symptoms" required>
               <!---<div class="my-info-rect layout5"></div>--->
             </div>
           </div>
@@ -149,15 +150,15 @@
           <div class="my-info-flex6-col1">
             <div class="my-info-flex8 layout">
               <h1 class="my-info-dob layout">DOB</h1>
-              <input class="my-info-rect layout6 my-info-date layout" type="dob" name="dob" placeholder="Date of Birth" value="{{ dob }}" id="dob" readonly>
+              <input class="my-info-rect layout6 my-info-date layout" type="date" name="dob" placeholder="Date of Birth" value="{{ dob }}" id="dob" required>
               <!---<div class="my-info-rect layout6"></div>--->
               <h1 class="my-info-sex layout">Sex</h1>
-              <input class="my-info-rect layout7 " type="text" name="sex" id="sex" placeholder="Sex" value="{{ sex }}" readonly>
+              <select class="my-info-rect layout7 " type="text" name="sex" id="sex" placeholder="Sex" value="{{ sex }}" required>
 <!--              <select class="my-info-rect layout7 " name="sex" id="sex" optional>-->
-<!--                <option value="Male">Male</option>-->
-<!--                <option value="Female">Female</option>-->
-<!--                <option value="Other">Other</option>-->
-<!--              </select>-->
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
              <!---<div class="my-info-rect layout7"></div>--->
             </div>
           </div>
@@ -170,10 +171,10 @@
       </div>
       <div class="my-info-content-box-row6">
         <div style="--src:url({{ url_for('static', filename='assets/cfd6a7997f1664001b7a45822e01a64d.png')}})">
-          <a href="{{ url_for('edit_info') }}"><input class="my-info-cover-group layout my-info-submit layout" type="submit" value="Edit Info"></a>
+          <input class="my-info-cover-group layout my-info-submit layout" type="submit" value="Submit">
           <!---<h1 class="my-info-submit layout">Submit</h1>, class= "my-info-submit layout--->
         </div>
       </div>
-    </div>
+    </form>
   </body>
 </html>
