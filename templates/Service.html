@@ -127,20 +127,15 @@ Do you have signs and symptoms of neuropathy in Belleville? Neuropathy is also k
         </div>
       </div>
       <div class="service-hero-title-wrap layout">
+
         <div
           style="--src:url({{ url_for('static', filename='assets/4711a0aacd38e97d84dac6ef1166a44a.png')}})"
           class="service-decorator layout"
         ></div>
-        <div class="service-cover-group1 layout">
-          <px-posize
-            x="74fr 254fr 74fr"
-            y="7px minmax(0px, 55fr) 22fr"
-            xs-x="74fr 254fr 74fr"
-            xs-y="25px minmax(0px, 55fr) 25fr"
-            >
-              <a href="{{ url_for('login') }}">
-              <input class="buttonClickHere service-cover-group1 service-click-here layout" type="button" value= "Click Here"></a>
-        </div>
+          <h1><a href="{{ url_for('login') }}">
+              <input class="service-cover-group1 layout service-click-here"type="button" value="Find Out More!"></a></h1>
+          <!---74,254(TRY TAKING OUT PX-POSSIZE)--->
+
         <h1 class="service-hero-title layout">Schedule an Appointment</h1>
       </div>
     </div>
