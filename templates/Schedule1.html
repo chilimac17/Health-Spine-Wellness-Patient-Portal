@@ -129,11 +129,10 @@
         <h2 class="schedule1-medium-title2 layout">Add The Doctor </h2>
       </div>
       <div class="schedule1-content-box-row8">
-        <select class="schedule1-rect4 layout" name="doctors" id="doctors">
-            <option value="Dr.Chillemi">Dr.Chillemi</option>
-            <option value="Dr.Kahanec">Dr.Kahanec</option>
-            <option value="KONSTANTAROS(Add proper title)">KONSTANTAROS(Add proper title)</option>
-            <option value="BAYONGAN PT(ADD Proper Title)">BAYONGAN PT(ADD Proper Title)</option>
+        <select class="schedule1-rect4 layout" name="doctor" id="doctor">
+          {% for d in doctors %}
+            <option value="{{d[1]}}">{{' '.join(d)}}</option>
+          {% endfor %}
         </select>
         <!---<div class="schedule1-rect4 layout">
           <input class="schedule1-rect4 layout" type="text" name="add_info" placeholder="Additional Info" id="add_info" required>
@@ -141,7 +140,7 @@
       </div>
       <div class="schedule1-content-box-row9">
         <div class="schedule1-cover-group layout">
-          <h1 class="schedule1-continue layout"><a class="schedule1-continue layout" href="{{ url_for('schedule2') }}">Continue</a></h1>
+          <input class="schedule1-cover-group layout schedule1-continue layout" type="submit" value="Continue">
         </div>
       </div>
     </form>
