@@ -195,7 +195,17 @@ def edit_info():
 
 @app.route('/patientappointments')
 def patient_appointments():
-    return render_template('MyAppointments.html',events=events)
+    if 'loggedin' in session:
+        # Fetch appointment information
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM Appointments WHERE patient = %s', (session['username'],))
+        appointments = cursor.fetchall()
+        # Create appointment events list
+        events = [{'start': datetime.combine(appt['date'], (datetime.min + appt['start_time']).time()), 'end': datetime.combine(appt['date'], (datetime.min + appt['end_time']).time()), 'doctor': appt['doctor']} for appt in appointments]
+        return render_template('MyAppointments.html',events=events)
+
+    # User is not logged in, redirect to login page
+    return redirect(url_for('login'))
 
 @app.route('/staffappointments')
 def staff_appointments():
