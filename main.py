@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
@@ -137,7 +137,6 @@ def register():
 # http://localhost:5000/pythinlogin/profile - this will be the profile page, only accessible for loggedin users
 @app.route('/profile')
 def profile():
-
     if 'loggedin' in session:
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM Users WHERE username = %s', (session['username'],))
@@ -295,6 +294,30 @@ def modify_appointment2():
             return redirect(url_for('modify_appointments_patient'))
 
         return render_template('ModifyAppointment2.html', date=date, time=time, add_info=add_info)
+
+    # User is not logged in, redirect to login page
+    return redirect(url_for('login'))
+
+@app.route('/deleteappointment', methods=['GET','POST'])
+def delete_appointment():
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    if request.method == 'POST':
+        id = request.form['id']
+        cursor.execute('DELETE FROM Appointments WHERE appointment_id = %s', (id,))
+        mysql.connection.commit()
+        msg  = 'success'
+    return jsonify(msg)
+
+@app.route('/deletemyappointments')
+def delete_appointments_patient():
+    if 'loggedin' in session:
+        # Fetch appointment information
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM Appointments WHERE patient = %s', (session['username'],))
+        appointments = cursor.fetchall()
+        # Create appointment events list
+        events = [{'id': appt['appointment_id'], 'start': datetime.combine(appt['date'], (datetime.min + appt['start_time']).time()), 'end': datetime.combine(appt['date'], (datetime.min + appt['end_time']).time()), 'doctor': appt['doctor']} for appt in appointments]
+        return render_template('DeleteMyAppointments.html', events=events)
 
     # User is not logged in, redirect to login page
     return redirect(url_for('login'))
