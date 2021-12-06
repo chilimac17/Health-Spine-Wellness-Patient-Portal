@@ -212,6 +212,25 @@ def modify_appointments_patient():
     # User is not logged in, redirect to login page
     return redirect(url_for('login'))
 
+@app.route('/modifyappointments')
+def modify_appointments_admin():
+    if 'loggedin' in session:
+        # Fetch appointment information
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM Appointments')
+        appointments = cursor.fetchall()
+        # Fetch patient information
+        # cursor.execute('SELECT first_name, last_name FROM Patient, Appointments WHERE Patient.username = Appointments.patient')
+        # patients = cursor.fetchall()
+        # Merge appointment and patient information
+        # appointments = [{**a, **p} for a, p in zip(appointments, patients)]
+        # Create appointment events list
+        events = [{'id': appt['appointment_id'], 'start': datetime.combine(appt['date'], (datetime.min + appt['start_time']).time()), 'end': datetime.combine(appt['date'], (datetime.min + appt['end_time']).time()), 'doctor': appt['doctor']} for appt in appointments]
+        return render_template('ModifyMyAppointments.html', events=events, session=session)
+
+    # User is not logged in, redirect to login page
+    return redirect(url_for('login'))
+
 @app.route('/modifyappointment', methods=['GET', 'POST'])
 def modify_appointment1():
     # Check if POST request is from clicking on a calendar event
@@ -219,7 +238,7 @@ def modify_appointment1():
         if 'id' in request.form:
             # Save id in session
             session['id'] = request.form['id']
-
+            # print(session['id'])
         # Check if POST request is from the form on the modify appointments page
         if 'first_name' in request.form and 'last_name' in request.form and 'email' in request.form and 'phone' in request.form and 'doctor' in request.form:
             # Save POST requests in session
@@ -303,6 +322,20 @@ def delete_appointments_patient():
         # Fetch appointment information
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM Appointments WHERE patient = %s', (session['username'],))
+        appointments = cursor.fetchall()
+        # Create appointment events list
+        events = [{'id': appt['appointment_id'], 'start': datetime.combine(appt['date'], (datetime.min + appt['start_time']).time()), 'end': datetime.combine(appt['date'], (datetime.min + appt['end_time']).time()), 'doctor': appt['doctor']} for appt in appointments]
+        return render_template('DeleteMyAppointments.html', events=events)
+
+    # User is not logged in, redirect to login page
+    return redirect(url_for('login'))
+
+@app.route('/deleteappointments')
+def delete_appointments_admin():
+    if 'loggedin' in session:
+        # Fetch appointment information
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM Appointments')
         appointments = cursor.fetchall()
         # Create appointment events list
         events = [{'id': appt['appointment_id'], 'start': datetime.combine(appt['date'], (datetime.min + appt['start_time']).time()), 'end': datetime.combine(appt['date'], (datetime.min + appt['end_time']).time()), 'doctor': appt['doctor']} for appt in appointments]
