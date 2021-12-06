@@ -153,11 +153,11 @@
               <input class="my-info-rect layout6 my-info-date layout" type="date" name="dob" placeholder="Date of Birth" value="{{ dob }}" id="dob" required>
               <!---<div class="my-info-rect layout6"></div>--->
               <h1 class="my-info-sex layout">Sex</h1>
-              <select class="my-info-rect layout7 " type="text" name="sex" id="sex" placeholder="Sex" value="{{ sex }}" required>
+              <select class="my-info-rect layout7 " type="text" name="sex" id="sex" placeholder="Sex" required>
 <!--              <select class="my-info-rect layout7 " name="sex" id="sex" optional>-->
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
+                <option value="Male" {% if sex == "Male" %} selected {% endif %}>Male</option>
+                <option value="Female" {% if sex == "Female" %} selected {% endif %}>Female</option>
+                <option value="Other" {% if sex == "Other" %} selected {% endif %}>Other</option>
               </select>
              <!---<div class="my-info-rect layout7"></div>--->
             </div>

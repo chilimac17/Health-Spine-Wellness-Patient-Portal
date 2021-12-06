@@ -13,6 +13,7 @@ from datetime import datetime, timedelta
 
 
 app = Flask(__name__)
+app.jinja_options['extensions'].append('jinja2.ext.do')
 
 # Change this to your secret key (can be anything, it's for extra protection)
 app.secret_key = 'your secret key'
@@ -81,6 +82,8 @@ def logout():
     # Remove session data, this will log the user out
    session.pop('loggedin', None)
    session.pop('username', None)
+   session.pop('appointments', None)
+   session.pop('id', None)
    # Redirect to login page
    return redirect(url_for('login'))
 
@@ -201,8 +204,97 @@ def patient_appointments():
         cursor.execute('SELECT * FROM Appointments WHERE patient = %s', (session['username'],))
         appointments = cursor.fetchall()
         # Create appointment events list
-        events = [{'start': datetime.combine(appt['date'], (datetime.min + appt['start_time']).time()), 'end': datetime.combine(appt['date'], (datetime.min + appt['end_time']).time()), 'doctor': appt['doctor']} for appt in appointments]
+        events = [{'id': appt['appointment_id'], 'start': datetime.combine(appt['date'], (datetime.min + appt['start_time']).time()), 'end': datetime.combine(appt['date'], (datetime.min + appt['end_time']).time()), 'doctor': appt['doctor']} for appt in appointments]
         return render_template('MyAppointments.html',events=events)
+
+    # User is not logged in, redirect to login page
+    return redirect(url_for('login'))
+
+@app.route('/modifymyappointments')
+def modify_appointments_patient():
+    if 'loggedin' in session:
+        # Fetch appointment information
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM Appointments WHERE patient = %s', (session['username'],))
+        appointments = cursor.fetchall()
+        # Create appointment events list
+        events = [{'id': appt['appointment_id'], 'start': datetime.combine(appt['date'], (datetime.min + appt['start_time']).time()), 'end': datetime.combine(appt['date'], (datetime.min + appt['end_time']).time()), 'doctor': appt['doctor']} for appt in appointments]
+        return render_template('ModifyMyAppointments.html', events=events, session=session)
+
+    # User is not logged in, redirect to login page
+    return redirect(url_for('login'))
+
+@app.route('/modifyappointment', methods=['GET', 'POST'])
+def modify_appointment1():
+    # Check if POST request is from clicking on a calendar event
+    if request.method == 'POST':
+        if 'id' in request.form:
+            # Save id in session
+            session['id'] = request.form['id']
+
+        # Check if POST request is from the form on the modify appointments page
+        if 'first_name' in request.form and 'last_name' in request.form and 'email' in request.form and 'phone' in request.form and 'doctor' in request.form:
+            # Save POST requests in session
+            session['appointment'] = request.form
+            # Redirect to next modify appointment page
+            return redirect(url_for('modify_appointment2'))
+
+    elif request.method == 'GET':
+        # Fetch appointment
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM Appointments WHERE appointment_id = %s', (session['id'],))
+        appointment = cursor.fetchone()
+        # Fetch patient
+        cursor.execute('SELECT first_name, last_name FROM Patient WHERE username = %s', (session['username'],))
+        patient = cursor.fetchone()
+        # Fetch list of doctors
+        cursor.execute('SELECT first_name, last_name FROM Doctors')
+        doctors = cursor.fetchall()
+        return render_template('ModifyAppointment1.html', email=appointment['email'], first_name=patient['first_name'], last_name=patient['last_name'], phone=appointment['phone'], doctor=appointment['doctor'], doctors=doctors)
+    return redirect(url_for('modify_appointments_patient'))
+
+@app.route('/modifyappointment2',methods=['GET', 'POST'])
+def modify_appointment2():
+    if 'loggedin' in session:
+        # Fetch appointment
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM Appointments WHERE appointment_id = %s', (session['id'],))
+        appointment = cursor.fetchone()
+        # Create variables for easy access
+        date = appointment['date']
+        time = (datetime.min + appointment['start_time']).time().strftime('%H:%M')
+        add_info = appointment['additional_info']
+
+        # Check if POST requests exist (user-submitted form)
+        if request.method == 'POST' and 'appointment' in session and 'date' in request.form and 'time' in request.form and 'add_info' in request.form:
+            # Update appointments POST requests in session
+            session['appointment'].update(request.form)
+
+            # Create variables for easy access
+            doctor = session['appointment']['doctor']
+            email = session['appointment']['email']
+            first_name = session['appointment']['first_name']
+            last_name = session['appointment']['last_name']
+            phone = session['appointment']['phone']
+            date = session['appointment']['date']
+            start_time = session['appointment']['time']
+            end_time = (datetime.strptime(start_time, '%H:%M') + timedelta(hours=1)).strftime(
+                '%H:%M')  # Create end time (one hour after start time)
+            add_info = session['appointment']['add_info']
+            patient = session['username']
+
+            # Insert appointment into Appointments table
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute('UPDATE Appointments SET date = %s, start_time = %s, end_time = %s, patient = %s, doctor = %s, additional_info = %s, phone = %s, email = %s WHERE appointment_id = %s', (date, start_time, end_time, patient, doctor, add_info, phone, email, session['id']))
+            mysql.connection.commit()
+
+            # Pop appointment id from session
+            session.pop('id', None)
+
+            # Redirect to patient appointments page
+            return redirect(url_for('modify_appointments_patient'))
+
+        return render_template('ModifyAppointment2.html', date=date, time=time, add_info=add_info)
 
     # User is not logged in, redirect to login page
     return redirect(url_for('login'))
@@ -277,12 +369,14 @@ def schedule2():
         end_time = (datetime.strptime(start_time, '%H:%M') + timedelta(hours=1)).strftime('%H:%M') # Create end time (one hour after start time)
         add_info = session['appointment']['add_info']
         patient = session['username']
-        print((date, start_time, end_time, patient, doctor, add_info, phone, email,))
 
         # Insert appointment into Appointments table
-        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor = mysql.connection.cursor()
         cursor.execute('INSERT INTO Appointments (date, start_time, end_time, patient, doctor, additional_info, phone, email) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)', (date, start_time, end_time, patient, doctor, add_info, phone, email,))
         mysql.connection.commit()
+
+        # Remove appointment data
+        session.pop('appointment', None)
 
         # Redirect to patient appointments page
         return redirect(url_for('patient_appointments'))

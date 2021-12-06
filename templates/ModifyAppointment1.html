@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/schedule1_css/common.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/schedule1_css/fonts.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/schedule1_css/Schedule1.css') }}" />
+  </head>
+
+  <body>
+    <form class="schedule1 schedule1-content-box layout" action="{{ url_for('modify_appointment1') }}" method="post">
+      <div class="schedule1-content-box-row">
+        <div class="schedule1-content-box1 layout">
+          <div class="schedule1-content-box1-col">
+            <div
+              style="--src:url({{ url_for('static', filename='assets/219699db006418aa7dd4bc6946145a09.png')}})"
+              class="schedule1-img layout"
+            ></div>
+          </div>
+          <div class="schedule1-content-box1-spacer"></div>
+          <div class="schedule1-content-box1-col1">
+            <h2 class="schedule1-home layout"><a class="schedule1-home layout" href="{{ url_for('homepage') }}">Home</a></h2>
+          </div>
+          <div class="schedule1-content-box1-spacer1"></div>
+          <div class="schedule1-content-box1-col2">
+            <h2 class="schedule1-my-information layout"><a class="schedule1-my-information layout" href="{{ url_for('patient_info') }}">My Information</a></h2>
+          </div>
+          <div class="schedule1-content-box1-spacer2"></div>
+          <div class="schedule1-content-box1-col3">
+            <h2 class="schedule1-my-appointments layout"><a class="schedule1-my-appointments layout" href="{{ url_for('patient_appointments') }}">My Appointments</a></h2>
+          </div>
+          <div class="schedule1-content-box1-spacer3"></div>
+          <div class="schedule1-content-box1-col4">
+            <h2 class="schedule1-profile layout"><a class="schedule1-profile layout" href="{{ url_for('patient_info') }}">Profile</a></h2>
+          </div>
+          <div class="schedule1-content-box1-spacer4"></div>
+          <div class="schedule1-content-box1-col5">
+            <h2 class="schedule1-log-out layout"><a class="schedule1-log-out layout" href="{{ url_for('homepage') }}">Log Out</a></h2>
+          </div>
+        </div>
+      </div>
+      <div class="schedule1-content-box-row1">
+        <h1 class="schedule1-hero-title layout">Schedule an Appointment</h1>
+      </div>
+      <div class="schedule1-content-box-row2">
+        <div class="schedule1-group layout">
+          <article class="schedule1-content-box2 layout">
+            <div class="schedule1-content-box2-spacer"></div>
+            <h1 class="schedule1-hero-title1 layout">2</h1>
+            <div class="schedule1-content-box2-spacer1"></div>
+            <div class="schedule1-content-box2-col">
+              <h2 class="schedule1-medium-title layout">
+                Choose a Date and Time
+              </h2>
+            </div>
+          </article>
+          <article class="schedule1-content-box3 layout">
+            <div class="schedule1-content-box3-spacer"></div>
+            <div class="schedule1-content-box3-col">
+              <h1 class="schedule1-hero-title2 layout">1</h1>
+            </div>
+            <div class="schedule1-content-box3-spacer1"></div>
+            <div class="schedule1-content-box3-col1">
+              <h2 class="schedule1-medium-title1 layout">
+                Enter Patient Information
+              </h2>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="schedule1-content-box-row3">
+        <div class="schedule1-flex layout">
+          <div class="schedule1-flex-col">
+            <h2 class="schedule1-first-name layout">First Name</h2>
+          </div>
+          <div class="schedule1-flex-spacer"></div>
+          <div class="schedule1-flex-col1">
+            <h2 class="schedule1-last-name layout">Last Name</h2>
+          </div>
+        </div>
+      </div>
+      <div class="schedule1-content-box-row4">
+        <div class="schedule1-flex layout1">
+          <div class="schedule1-flex1-col">
+             <input class="schedule1-rect layout schedule1-first-name layout" type="text" name="first_name" placeholder="First Name" id="first_name" value="{{ first_name }}" required>
+          </div>
+          <div class="schedule1-flex1-spacer"></div>
+          <div class="schedule1-flex1-col">
+            <input class="schedule1-rect layout schedule1-last-name layout" type="text" name="last_name" placeholder="Last Name" id="last_name" value="{{ last_name }}" required>
+          </div>
+        </div>
+      </div>
+      <div class="schedule1-content-box-row5">
+        <div class="schedule1-flex layout2">
+          <div class="schedule1-flex2-col">
+            <h2 class="schedule1-email layout">Email</h2>
+          </div>
+          <div class="schedule1-flex2-spacer"></div>
+          <div class="schedule1-flex2-col1">
+            <h2 class="schedule1-mobile-phone layout">Mobile Phone</h2>
+          </div>
+        </div>
+      </div>
+      <div class="schedule1-content-box-row6">
+        <div class="schedule1-flex layout3">
+          <div class="schedule1-flex3-col">
+            <input class="schedule1-rect layout schedule1-email layout" type="email" name="email" placeholder="Email" id="email" value="{{ email }}" required>
+          </div>
+          <div class="schedule1-flex3-spacer"></div>
+          <div class="schedule1-flex3-col">
+            <input class="schedule1-rect layout schedule1-mobile-phone layout" type="tel" name="phone" placeholder="123-456-7890" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="{{ phone }}" required>
+          </div>
+        </div>
+      </div>
+      <<div class="schedule1-content-box-row7">
+        <h2 class="schedule1-medium-title2 layout">Add The Doctor </h2>
+      </div>
+      <div class="schedule1-content-box-row8">
+        <select class="schedule1-rect4 layout" name="doctor" id="doctor">
+          {% for d in doctors %}
+            <option value="{{d['last_name']}}" {% if d['last_name'] == doctor %} selected {% endif %}>{{' '.join(d.values())}}</option>
+          {% endfor %}
+        </select>
+        <!---<div class="schedule1-rect4 layout">
+          <input class="schedule1-rect4 layout" type="text" name="add_info" placeholder="Additional Info" id="add_info" required>
+        </div>--->
+      </div>
+      <div class="schedule1-content-box-row9">
+        <input class="schedule1-cover-group layout" type="submit" value="Continue">
+      </div>
+    </form>
+  </body>
+</html>

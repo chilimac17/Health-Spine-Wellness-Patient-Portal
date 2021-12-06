@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <link rel='stylesheet' href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
 
       document.addEventListener('DOMContentLoaded', function() {
@@ -19,12 +20,29 @@
           events: [
             {% for event in events %}
              {
+              id: '{{event.id}}',
               title: '{{'Dr. ' + event.doctor}}',
               start: '{{event.start}}',
               end:   '{{event.end}}'
             },
             {% endfor %}
-          ]
+          ],
+          eventClick:function(info)
+          {
+            if(confirm('Are you sure you want to modify this appointment?'))
+            {
+              $.ajax({
+                url:'{{ url_for('modify_appointment1') }}',
+                type:'POST',
+                data:{id:info.event.id},
+                success:function()
+                {
+                  window.open('{{ url_for('modify_appointment1') }}');
+                }
+              })
+            }
+          }
+
         });
         calendar.render();
       });
