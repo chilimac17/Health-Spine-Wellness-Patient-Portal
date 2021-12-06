@@ -40,7 +40,7 @@ events = [
         'date' : '2021-12-12'
     },
 {
-        'todo' : 'Treatment by Dr.K',
+        'todo' : 'Treatment by Dr.Chillemi',
         'date' : '2021-12-14'
     }
 
