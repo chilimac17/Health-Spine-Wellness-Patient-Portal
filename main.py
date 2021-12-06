@@ -124,16 +124,16 @@ def register():
 
 
 # http://localhost:5000/pythinlogin/profile - this will be the profile page, only accessible for loggedin users
-# @app.route('/profile')
-# def profile():
-#     if 'loggedin' in session:
-#         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-#         cursor.execute('SELECT * FROM Users WHERE username = %s', (session['username'],))
-#         # Fetch one record and return result
-#         account = cursor.fetchone()
-#         return render_template('Profile.html', username=account['username'], password=account['password'], email=account['email'])
-#     # User is not loggedin redirect to login page
-#     return redirect(url_for('login'))
+@app.route('/profile')
+def profile():
+     if 'loggedin' in session:
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM Users WHERE username = %s', (session['username'],))
+        # Fetch one record and return result
+        account = cursor.fetchone()
+        return render_template('Profile.html', username=account['username'], password=account['password'], email=account['email'])
+     # User is not loggedin redirect to login page
+        return redirect(url_for('login'))
 
 @app.route('/patientinfo')
 def patient_info():
