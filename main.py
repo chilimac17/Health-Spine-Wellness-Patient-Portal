@@ -29,25 +29,6 @@ mysql = MySQL(app)
 
 # http://localhost:5000/pythonlogin/ - this will be the login page, we need to use both GET and POST requests
 
-#creating list for calendar
-events = [
-    {
-        'todo' : 'Evaluation with Dr.Chillemi',
-        'date' : '2021-12-17',
-
-    },
-    {
-        'todo' : 'Treatment by Dr.Chillemi',
-        'date' : '2021-12-12'
-    },
-{
-        'todo' : 'Treatment by Dr.Chillemi',
-        'date' : '2021-12-14'
-    }
-
-
-]
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     # Output message if something goes wrong...
@@ -67,8 +48,16 @@ def login():
             # Create session data, we can access this data in other routes
             session['loggedin'] = True
             session['username'] = account['username']
-            # Redirect to home page
-            return redirect(url_for('patient_appointments'))
+            # Redirect to home page, check if user is patient or doctor
+            cursor.execute('SELECT * FROM Patient WHERE username = %s', (username,))
+            if cursor.fetchone() is not None:
+                return redirect(url_for('patient_appointments'))
+            cursor.execute('SELECT * FROM Administrator WHERE username = %s', (username,))
+            if cursor.fetchone() is not None:
+                return redirect(url_for('admin_appointments'))
+            cursor.execute('SELECT * FROM Doctors WHERE username = %s', (username,))
+            if cursor.fetchone() is not None:
+                return redirect(url_for('doctor_appointments'))
 
 
         else:
@@ -135,16 +124,16 @@ def register():
 
 
 # http://localhost:5000/pythinlogin/profile - this will be the profile page, only accessible for loggedin users
-@app.route('/profile')
-def profile():
-    if 'loggedin' in session:
-        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM Users WHERE username = %s', (session['username'],))
-        # Fetch one record and return result
-        account = cursor.fetchone()
-        return render_template('Profile.html', username=account['username'], password=account['password'], email=account['email'])
-    # User is not loggedin redirect to login page
-    return redirect(url_for('login'))
+# @app.route('/profile')
+# def profile():
+#     if 'loggedin' in session:
+#         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+#         cursor.execute('SELECT * FROM Users WHERE username = %s', (session['username'],))
+#         # Fetch one record and return result
+#         account = cursor.fetchone()
+#         return render_template('Profile.html', username=account['username'], password=account['password'], email=account['email'])
+#     # User is not loggedin redirect to login page
+#     return redirect(url_for('login'))
 
 @app.route('/patientinfo')
 def patient_info():
@@ -250,6 +239,7 @@ def modify_appointment1():
         cursor.execute('SELECT first_name, last_name FROM Doctors')
         doctors = cursor.fetchall()
         return render_template('ModifyAppointment1.html', email=appointment['email'], first_name=patient['first_name'], last_name=patient['last_name'], phone=appointment['phone'], doctor=appointment['doctor'], doctors=doctors)
+
     return redirect(url_for('modify_appointments_patient'))
 
 @app.route('/modifyappointment2',methods=['GET', 'POST'])
@@ -277,8 +267,7 @@ def modify_appointment2():
             phone = session['appointment']['phone']
             date = session['appointment']['date']
             start_time = session['appointment']['time']
-            end_time = (datetime.strptime(start_time, '%H:%M') + timedelta(hours=1)).strftime(
-                '%H:%M')  # Create end time (one hour after start time)
+            end_time = (datetime.strptime(start_time, '%H:%M') + timedelta(hours=1)).strftime('%H:%M')  # Create end time (one hour after start time)
             add_info = session['appointment']['add_info']
             patient = session['username']
 
@@ -322,25 +311,49 @@ def delete_appointments_patient():
     # User is not logged in, redirect to login page
     return redirect(url_for('login'))
 
-@app.route('/staffappointments')
-def staff_appointments():
-    return render_template('patientappointments.html',events=events)
+@app.route('/adminappointments')
+def admin_appointments():
+    if 'loggedin' in session:
+        # Fetch appointment information
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM Appointments')
+        appointments = cursor.fetchall()
+        # Fetch patient information
+        cursor.execute('SELECT first_name, last_name FROM Patient, Appointments WHERE Patient.username = Appointments.patient')
+        patients = cursor.fetchall()
+        # Merge appointment and patient information
+        appointments = [{**a, **p} for a, p in zip(appointments, patients)]
+        # Create appointment events list
+        events = [{'id': appt['appointment_id'], 'start': datetime.combine(appt['date'], (datetime.min + appt['start_time']).time()), 'end': datetime.combine(appt['date'], (datetime.min + appt['end_time']).time()), 'patient': ' '.join((appt['first_name'], appt['last_name']))} for appt in appointments]
+    return render_template('adminappointments.html',events=events)
 
 @app.route('/doctorappointments')
 def doctor_appointments():
-    return render_template('docappointment.html',events=events)
+    if 'loggedin' in session:
+        # Fetch appointment information
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM Appointments WHERE doctor = %s', (session['username'],))
+        appointments = cursor.fetchall()
+        # Fetch patient information
+        cursor.execute('SELECT first_name, last_name FROM Patient, Appointments WHERE Patient.username = Appointments.patient AND Appointments.doctor = %s', (session['username'],))
+        patients = cursor.fetchall()
+        # Merge appointment and patient information
+        appointments = [{**a, **p} for a, p in zip(appointments, patients)]
+        # Create appointment events list
+        events = [{'id': appt['appointment_id'], 'start': datetime.combine(appt['date'], (datetime.min + appt['start_time']).time()), 'end': datetime.combine(appt['date'], (datetime.min + appt['end_time']).time()), 'patient': ' '.join((appt['first_name'], appt['last_name']))} for appt in appointments]
+        return render_template('docappointment.html', events=events)
 
-@app.route('/patientsearch')
-def patient_search():
-    return render_template('patientSearch.html',events=events)
-
-@app.route('/patientinfoupdate')
-def patient_info_update():
-    return render_template('Profile.html')
-
-@app.route('/calendar')
-def calendar():
-    return render_template('Calendar.html',events = events)
+# @app.route('/patientsearch')
+# def patient_search():
+#     return render_template('patientSearch.html',events=events)
+#
+# @app.route('/patientinfoupdate')
+# def patient_info_update():
+#     return render_template('Profile.html')
+#
+# @app.route('/calendar')
+# def calendar():
+#     return render_template('Calendar.html',events = events)
 
 @app.route('/')
 def homepage():

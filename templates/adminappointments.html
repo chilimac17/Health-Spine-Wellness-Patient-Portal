@@ -71,10 +71,12 @@
             <!---h2 class="my-appointments-my-appointments layout"><a class="my-appointments-my-information layout" href="{{ url_for('patient_appointments') }}">My Appointments</a></h2!--->
           </div>
           <div class="my-appointments-content-box1-spacer3"></div>
-
-          <div class="my-appointments-content-box1-spacer4"></div>
+          <!-- <div class="my-appointments-content-box1-col4">
+            <h2 class="my-appointments-profile layout"><a class="my-appointments-profile layout" href="{{ url_for('patient_info') }}">Profile</a></h2>
+          </div>
+          <div class="my-appointments-content-box1-spacer4"></div> -->
            <div class="my-appointments-content-box1-col2">
-            <h2 class="my-appointments-my-information layout"><a class="my-appointments-my-information layout" href="{{ url_for('doctor_appointments') }}">Doctor Appointment</a></h2>
+            <h2 class="my-appointments-my-information layout"><a class="my-appointments-my-information layout" href="{{ url_for('admin_appointments') }}">Patient Appointment</a></h2>
           </div>
           <div class="my-appointments-content-box1-col5">
             <h2 class="my-appointments-log-out layout"><a class="my-appointments-profile layout" href="{{ url_for('homepage') }}">Log Out</a></h2>
@@ -86,6 +88,13 @@
           <div class="my-appointments-flex-col"  id='calendar'>
           </div>
           <div class="my-appointments-flex-spacer"></div>
+          <div class="my-appointments-flex-col1">
+            <div class="my-appointments-flex1 layout">
+              <a href="{{ url_for('schedule1') }}"><input class="my-appointments-cover-group my-appointments-create-appointment layout" type="submit" value="Create Appointment"></a>
+              <input class="my-appointments-cover-group my-appointments-modify-appointment layout" type="submit" value="Modify Appointment">
+              <input class="my-appointments-cover-group my-appointments-delete-appointment layout" type="submit" value="Delete Appointment">
+            </div>
+          </div>
         </div>
       </div>
     </div>
