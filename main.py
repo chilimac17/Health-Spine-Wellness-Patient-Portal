@@ -13,7 +13,7 @@ from datetime import datetime, timedelta
 
 
 app = Flask(__name__)
-app.jinja_options['extensions'].append('jinja2.ext.do')
+app.jinja_env.add_extension('jinja2.ext.do')
 
 # Change this to your secret key (can be anything, it's for extra protection)
 app.secret_key = 'your secret key'
